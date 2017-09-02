@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<head>
+<link rel='stylesheet' href='css/vpn.css'/>
+	<script>
+		function req_click(event)
+		{
+			window.location.href = 'vpn_request.html';
+		}
+	</script>
+	<style>
+	li{	padding:5px	}
+	</style>
+</head>
+<body style="background-color:#FFFFFF">
+
+<div style="text-align:right;  font:bold 16px Dotum; margin:40px auto; width:900px;color:#0066CC">한전KPS VPN에 오신 것을 환영합니다. </div>
+
+<div class="wrap">
+		<div style="margin:-10px -1px 0 -1px"><div class="title_first"></div>
+		<div class="title_pt">VPN 신청 절차 </div>
+		<div class="title_last"></div></div>
+  <div class="clear" style="padding:0 30px 15px 15px;*padding:5px 15px 15px 15px; height:300px">
+		  <div style=" float:left; width:400px;margin:0 20px">
+		  <p style="font-weight:bold">신청자가 <font style="color:#FF0066">팀원</font>인 경우 </p>
+		  <ul style="list-style:none;border:1px solid #a5bddf; background-color:#e4efff; padding:20px; font-weight:bold">
+		  <li>1. 사용신청 <p style="margin:0 0 5px 20px; font-weight:normal; color:#003399; ">아래 신청버튼을 눌러 신청서 작성</p></li>
+		  <li>2-1. 소속팀장 1차 승인</li>
+		  <li style="padding-left:20px">2. 정보보안담당자 2차 승인</li>
+		  <li style="padding-left:20px">3. 정보화전략팀장 3차 승인</li>
+		  <li style="padding-left:20px">4. VPN관리자 최종 승인</li>
+		  <li>3. 사용자 통보 ( 메일 자동 송부)<p style="margin:0 0 5px 20px; font-weight:normal; color:#003399; ">신청승인완료 및 사용안내를 신청자 메일로 송부</p></li>
+		  <li>4. 사용</li>
+		  </ul>
+		  </div>
+		  
+		<div style=" float:left;width:400px;">
+		  <p style="font-weight:bold">신청자가 <font style="color:#FF0066">팀장 이상</font>인 경우 </p>
+		  <ul style="list-style:none;border:1px solid #a5bddf; background-color:#e4efff; padding:20px; font-weight:bold">
+		  <li>1. 사용신청 <p style="margin:0 0 5px 20px; font-weight:normal; color:#003399; ">아래 신청버튼을 눌러 신청서 작성</p></li>
+		  <li>2-1. 정보보안담당자 1차 승인</li>
+		  <li style="padding-left:20px">2. 정보화전략팀장 2차 승인</li>
+		  <li style="padding-left:20px; margin-bottom:23px">3. VPN관리자 최종 승인</li>
+		  <li>3. 사용자 통보 ( 메일 자동 송부)<p style="margin:0 0 5px 20px; font-weight:normal; color:#003399; ">신청승인완료 및 사용안내를 신청자 메일로 송부</p></li>
+		  <li>4. 사용</li>
+		  </ul>
+		  </div>
+		  
+		</div>
+	</div>
+<div class="shadow"></div>
+	<div style='text-align: center; height: 500px'>
+		<table align="center" width="800px">
+		<tr><td style="text-align:left">
+		<p style="font-size:14px; font-weight:bold; color:#FF0066">* VPN (가상사설망) 사용 신청 안내</p>
+		<ul style="list-style:circle; font-size:14px; font-weight:bold; color:#3366CC">
+		<li>VPN 사용 신청 및 승인 기간
+		<p style="font-size:12px; font-weight:normal; color:#333333">한전KPS 원격근무 보안관리 강화에 따라, 신청자 소속부서의 장(처장·소장·지점장·팀장 등)의 승인 및 회사 정보보안
+   담당자의 확인 후에 계정이 발급되오니 VPN <strong style="text-decoration:underline">사용 희망일 최소 2~3일 전에 신청</strong>하여 주시기 바랍니다.</p>
+		</li>
+		<li>한전 KPS 정보보안 솔루션 설치 필요
+		<p style="font-size:12px; font-weight:normal; color:#333333">VPN 사용 시 한전KPS 사내 업무용PC 보안 정책이 적용되며, 보안 정책에 따라 DRM(전자문서보안시스템)·백신 
+   바이로봇·내PC지키미·보안USB 등 <strong style="text-decoration:underline">사내 정보보안 솔루션 설치가 필요</strong>하오니 이 점 유의하시기 바랍니다.</p>
+ <p style="font-size:12px; color:#333333">주) 회사 업무용 PC 외 접속 불가</p>
+		</li>
+		</ul>
+		</td></tr>
+		</table>
+		
+		<button class="b_bg" onMouseDown="this.className='b_bg ov';" onMouseUp="this.className='b_bg';" onclick='req_click(event)'>신청 시작</button>
+	</div>
+</body>
+</html>

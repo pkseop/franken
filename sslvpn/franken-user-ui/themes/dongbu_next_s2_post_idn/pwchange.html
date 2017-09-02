@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	<title>WeGuardia™ SSLplus</title>
+
+	<link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css"></link>
+	<link rel="stylesheet" href="/view/common/css/common.css"></link>
+
+	<script type="text/javascript" src="/sslplus.global.js"></script>
+	<script type="text/javascript" data-main="sslplus" src="/lib/require.js"></script>
+</head>
+
+<body class="transparent">
+<div class="well mywell">
+	<form id="change" class="form-horizontal">
+		<h4>암호 변경</h4>
+		<div class="well" id="change_msg"></div>
+		<div id="area_old" class="control-group" style="display:none">
+			<label class="control-label" for="password_old">기존 암호</label>
+			<div class="controls">
+				<input type="password" class="input-xlarge" name="old_password" id="password_old" />
+				<p class="help-block" style="display:none">유효하지 않은 암호</p>
+			</div>
+		</div>
+		<div id="area_new" class="control-group">
+			<label class="control-label" for="password_new">새 암호</label>
+			<div class="controls">
+				<input type="password" class="input-xlarge" name="password" id="password_new" />
+				<p class="help-block" style="display:none">유효하지 않은 암호</p>
+			</div>
+		</div>
+		<div id="area_re" class="control-group">
+			<label class="control-label" for="password_re">새 암호 확인</label>
+			<div class="controls">
+				<input type="password" class="input-xlarge" name="repassword" id="password_re" />
+				<p class="help-block" style="display:none">유효하지 않은 암호</p>
+			</div>
+		</div>
+		<div class="form-actions">
+			<button id="do_change" class="btn btn-primary" style="width: 90px">암호 변경</button>
+		</div>
+		<input type="hidden" name="type" value="json" />
+		<input type="hidden" name="login_name" id="login_name" />
+	</form>
+</div>
+
+</body>
+</html>

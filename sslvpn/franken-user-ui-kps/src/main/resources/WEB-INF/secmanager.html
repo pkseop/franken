@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<head>		
+		<link rel="stylesheet" href="css/secManager.css" media="screen">
+		<link rel="stylesheet" href="dojo/resources/dojo.css" />
+		<link rel="stylesheet" href="dojox/grid/resources/claroGrid.css" />
+		<link rel="stylesheet" href="dojox/grid/enhanced/resources/claro/EnhancedGrid.css" />
+		<link rel="stylesheet" href="dojox/grid/enhanced/resources/EnhancedGrid_rtl.css" />
+		<link rel="stylesheet" href="dijit/themes/claro/claro.css" media="screen">
+		<script type="text/javascript" src="dojo/dojo.js" data-dojo-config=" parseOnLoad: true, async: true"></script>		
+	</head>
+	<body class="claro">
+		<div id="secManagerContainerNode"></div>
+		<script>
+			// Bring in our custom widget
+			require(["dojo/dom", "app/widget/SecManager", "dojo/domReady!"],
+				function( dom, SecManager){	
+					var container = dom.byId("secManagerContainerNode");			
+					var widget = new SecManager();
+					widget.placeAt(container);				
+			});
+		</script>
+	</body>
+</html>

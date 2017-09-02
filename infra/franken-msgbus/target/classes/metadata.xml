@@ -1,0 +1,14 @@
+<ipojo>
+	<handler classname="kr.co.future.msgbus.handler.MsgbusPluginHandler"
+		name="msgbusplugin" namespace="kr.co.future.msgbus.handler">
+		<requires field="msgbus" />
+	</handler>
+
+	<instance component="msgbus" />
+	<instance component="msgbus-resource-api" />
+	<instance component="msgbus-push-api" />
+	<instance component="msgbus-push-plugin" />
+	<instance component="msgbus-script-factory" />
+	<instance component="msgbus-token-api" />
+	<instance component="msgbus-token-plugin" />
+</ipojo>

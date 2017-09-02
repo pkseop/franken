@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<title>NH농협생명/NH농협손해보험</title>
+	<script>
+		function hov(loc,cls) {   
+		if(loc.className)   
+			loc.className=cls;
+		}
+		
+		function SSlStart()
+		{
+			var element = document.getElementById("TSGSSL");
+			var str= "/$host/setup_$host.exe";
+			element.DownloadAndSetup(str);
+		}
+	</script>
+	
+	<script language="javascript" event="FireNoticeMessage()" for="TSGSSL">
+		SSlStart();
+	</script>
+	
+	<style>
+		body {margin:0}
+		form {margin:0}
+		a { border:none; }
+		img { border:none; }
+		#box1 {height:31px; background-image:url(images/bg_top_02.png); background-repeat:repeat-x}
+		#box2 {height:560px; background-image:url(images/bg_main_01.png); background-repeat:no-repeat}
+		#box2_inner {width:160px; height:117px; float:left; margin:355px 0 0 650px}
+		#footer {background-color:#F5F5F5; padding:3px 0 3px 10px; font:11px "tahoma"; color:#999999}
+		#object {width:0px; height:0px; padding:0px}
+		.b_interline {height:45px; margin:0; padding:0px; border: 0px solid red;}
+		.b_window {width:155px; height:35px; background :url(images/btn_w.png); background-repeat:no-repeat; cursor:pointer;}
+		.b_window_ov {width:155px; height:35px; background-image:url(images/btn_w_o.png); background-repeat:no-repeat; border:0; cursor:pointer}
+		.b_window_do {width:155px; height:35px; background-image:url(images/btn_w.png); background-repeat:no-repeat; border:0; cursor:pointer; margin-top:1px}
+		.b_linux {width:155px; height:35px; background-image:url(images/btn_l.png); background-repeat:no-repeat; border:0; cursor:pointer}
+		.b_linux_ov {width:155px; height:35px; background-image:url(images/btn_l_o.png); background-repeat:no-repeat; border:0; cursor:pointer}
+		.b_linux_do {width:155px; height:35px; background-image:url(images/btn_l.png); border:0; background-repeat:no-repeat; cursor:pointer; margin-top:1px}
+		.b_manual {width:155px; height:35px; background-image:url(images/btn_m.png); background-repeat:no-repeat; border:0; cursor:pointer}
+		.b_manual_ov {width:155px; height:35px; background-image:url(images/btn_m_o.png); background-repeat:no-repeat; border:0; cursor:pointer}
+		.b_manual_do {width:155px; height:35px; background-image:url(images/btn_m.png); border:0; background-repeat:no-repeat; cursor:pointer; margin-top:1px}
+		
+		
+		
+	</style>
+	</head>
+	<body style="margin:0">
+		<div id="object">
+			  <object classid="clsid:12200639-C2ED-4137-829B-29462C7609A5"
+						  codebase="./sslplus.cab#version=1,0,0,1"
+						  id="TSGSSL" width= "0" height = "0">
+				</object>
+		</div>	
+		<div id="box1"><img src="images/bg_top_01.png" width="278px" height="31px" border="0" /></div>
+		<div id="box2">
+			<div id="box2_inner">
+				<div class="b_interline">
+					<a href="/setup_$host.exe">
+						<img class="b_window"
+							onFocus="this.blur();" 
+							onMouseOver="hov(this,'b_window_ov')" 
+							onMouseDown="hov(this,'b_window_do')" 
+							onMouseOut="hov(this,'b_window')" />
+					</a>	
+				</div>
+				<div class="b_interline">
+					<a href="/sslplus.pdf">
+						<img class="b_manual" 
+							onFocus="this.blur();" 
+							onMouseOver="hov(this,'b_manual_ov')" 
+							onMouseDown="hov(this,'b_manual_do')"
+							onMouseOut="hov(this,'b_manual')" />
+					</a>
+				</div>
+			</div>
+		</div>
+		<div id="footer">Copyrightⓒ2012 FutureSystem,Inc. All Rights Reserved.</div>
+	</body>
+</html>

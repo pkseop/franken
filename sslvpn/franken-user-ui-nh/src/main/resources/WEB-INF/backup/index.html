@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+	<head>
+		<title>WeGuardia™ SSLplus</title>
+		<style>
+			img { border: none }
+		</style>
+		
+		<script type="text/javascript" >
+			function SSlStart()
+			{
+				var element = document.getElementById("TSGSSL");
+				var str= "/$host/setup_$host.exe";
+				element.DownloadAndSetup(str);
+			}
+		</script>
+		
+		<script language="javascript" event="FireNoticeMessage()" for="TSGSSL">
+			SSlStart();
+		</script>
+		
+		
+	</head>
+
+	<body style="padding-left:35px;padding-top:35px">
+	<div>
+	      <object classid="clsid:12200639-C2ED-4137-829B-29462C7609A5"
+                      codebase="./sslplus.cab#version=1,0,0,1"
+                      id="TSGSSL" width= "0" height = "0">
+            </object>
+	</div>
+	
+		<img src="header.png" style="margin-left: 70px" />
+		
+		<p style="margin-left: 0px; margin-top: 30px">
+		<table>
+			<tr>
+				<td>
+					<a href="/setup_$host.exe"><img id="t" src="button-win.png" alt="windows client" onmouseout="javascript: this.src='button-win.png';" onmouseover="javascript: this.src='button-win-over.png';" /></a>
+				</td>
+				<td>
+					<a href="/spclient-1.0.1-201111.i386.tgz"><img id="t" src="button-linux.png" alt="Linux client" onmouseout="javascript: this.src='button-linux.png';" onmouseover="javascript: this.src='button-linux-over.png';" /></a>
+				</td>
+				<td>
+					<a href="/sslplus.pdf"><img src="button-manual.png" alt="manual" onmouseout="javascript: this.src='button-manual.png';" onmouseover="javascript: this.src='button-manual-over.png';" /></a>
+				</td>
+			</tr>
+
+		</p>
+	</body>
+</html>

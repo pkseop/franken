@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+	<title>WeGuardia™ SSLplus</title>
+
+	<link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css"></link>
+	<link rel="stylesheet" href="/view/common/css/common.css"></link>
+	<link rel="stylesheet" href="/view/common/css/global.css"></link>
+
+	<script type="text/javascript" src="/sslplus.global.js"></script>
+	<script type="text/javascript" data-main="sslplus" src="/lib/require.js"></script>
+</head>
+<body>
+	<div class="modal-backdrop"></div>
+	<div class="modal">
+		<div class="well" style="background-color:white">
+			<form id="resetform" class="form-horizontal" method="post" action="/reset/reset">
+				<input type="hidden" name="token" value="$token" />
+				<input type="hidden" name="login_name" value="$login_name" />
+				<h4>암호 재설정</h4>
+				<div class="well">
+					<span>$login_name</span>님의 암호를 재설정합니다. 새 암호를 입력하세요.<br/>
+					암호는 9자 이상의 영문, 숫자, 특수문자 조합으로 만들어야 합니다.
+				</div>
+				<div id="area_new" class="control-group">
+					<label class="control-label" for="password_new">새 암호</label>
+					<div class="controls">
+						<input type="password" class="input-xlarge" id="password_new" name="password" />
+						<p class="help-block" style="display:none"></p>
+					</div>
+				</div>
+				<div id="area_re" class="control-group">
+					<label class="control-label" for="password_re">새 암호 확인</label>
+					<div class="controls">
+						<input type="password" class="input-xlarge" id="password_re" name="repassword" />
+						<p class="help-block" style="display:none"></p>
+					</div>
+				</div>
+				<div class="form-actions">
+					<button id="do-reset" type="submit" class="btn btn-primary" style="width: 80px">재설정</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

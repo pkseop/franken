@@ -1,0 +1,21 @@
+﻿<div class=${baseClass}>
+	<div id="appLayout" class="demoLayout" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design: 'center'">
+		<div class="edgePanel" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'top'">
+			<span id="title">정보보안 담당자 관리</span>
+		</div>
+		<div id="secManagerPane" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'">			
+			<div id="filter">
+				<input id="filterPernr" data-dojo-attach-point="filterPernr_Node" style="width:100px;" data-dojo-type="dijit/form/TextBox" data-dojo-props="placeHolder: '사번'">
+				<input id="filterEname" data-dojo-attach-point="filterEname_Node"  style="width:100px;" data-dojo-type="dijit/form/TextBox" data-dojo-props="placeHolder: '성명'">
+				<button type="button"  data-dojo-attach-event="onClick: search" class="b_search" onmousedown="this.className='b_search ov';"	onmouseup="this.className='b_search';"
+					style="vertical-align:middle;*margin-left:3px;" title="검색" ></button>
+			</div>
+			
+			<div id="secManagerGrid" data-dojo-attach-point="secManagerGridNode"></div>			
+		</div>	
+	</div>
+	
+	<div class="text-center" style="margin-top:5px">
+		<button id='secChange' class="b_bg" data-dojo-attach-event="onClick: secManagerChange" onmousedown="this.className='b_bg ov';" onmouseup="this.className='b_bg';">변경</button>
+	</div>
+</div>

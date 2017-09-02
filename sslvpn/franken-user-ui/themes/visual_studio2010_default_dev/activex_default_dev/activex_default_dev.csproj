@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{17A87BAD-8F5B-4A19-B21E-CDE2D4E7005E}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>activex_default_dev</RootNamespace>
+    <AssemblyName>activex_default_dev</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app.build.js" />
+    <Content Include="complete.html" />
+    <Content Include="controller\ActiveXController.js" />
+    <Content Include="controller\applist.js" />
+    <Content Include="controller\checkinstall.js" />
+    <Content Include="controller\ConnectionController.js" />
+    <Content Include="controller\login_start.js" />
+    <Content Include="controller\PageController.js" />
+    <Content Include="controller\PasswordLostController.js" />
+    <Content Include="controller\PasswordResetController.js" />
+    <Content Include="controller\SSLClientController.js" />
+    <Content Include="error.html" />
+    <Content Include="default.html" />
+    <Content Include="lib\bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="lib\bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="lib\bootstrap\css\bootstrap.css" />
+    <Content Include="lib\bootstrap\css\bootstrap.min.css" />
+    <Content Include="lib\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="lib\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="lib\bootstrap\js\bootstrap.js" />
+    <Content Include="lib\bootstrap\js\bootstrap.min.js" />
+    <Content Include="lib\DD_belatedPNG.js" />
+    <Content Include="lib\jquery-1.8.0.js" />
+    <Content Include="lib\json2.js" />
+    <Content Include="lib\require.js" />
+    <Content Include="msgbox.html" />
+    <Content Include="pwchange.html" />
+    <Content Include="pwlost.html" />
+    <Content Include="r-custom.js" />
+    <Content Include="r.js" />
+    <Content Include="reset.html" />
+    <Content Include="sslplus.global.js" />
+    <Content Include="sslplus.js" />
+    <Content Include="sslplus.util.js" />
+    <Content Include="version.js.txt" />
+    <Content Include="view\common\css\common.css" />
+    <Content Include="view\common\css\common_ie6.css" />
+    <Content Include="view\common\css\global.css" />
+    <Content Include="view\common\global.custom.js" />
+    <Content Include="view\common\image\ajax-loader-big.gif" />
+    <Content Include="view\common\image\ajax-loader.gif" />
+    <Content Include="view\common\image\alert-red-small.png" />
+    <Content Include="view\common\image\alert-small.gif" />
+    <Content Include="view\common\image\app_android.png" />
+    <Content Include="view\common\image\app_web.png" />
+    <Content Include="view\common\image\app_windows.png" />
+    <Content Include="view\common\image\backdrop.png" />
+    <Content Include="view\common\image\box_close.png" />
+    <Content Include="view\common\image\client_android.png" />
+    <Content Include="view\common\image\client_ios.png" />
+    <Content Include="view\common\image\client_linux.png" />
+    <Content Include="view\common\image\client_windows.png" />
+    <Content Include="view\common\image\info.png" />
+    <Content Include="view\common\image\logo.png" />
+    <Content Include="view\common\image\logo_top.png" />
+    <Content Include="view\common\image\manual.png" />
+    <Content Include="view\common\image\num.png" />
+    <Content Include="view\common\image\remove.png" />
+    <Content Include="view\common\image\seperator.png" />
+    <Content Include="view\common\image\ssldefault.png" />
+    <Content Include="view\common\message.res.js" />
+    <Content Include="view\common\pagemap.res.js" />
+    <Content Include="view\common\page\applist.html" />
+    <Content Include="view\common\page\checkinstall.html" />
+    <Content Include="view\common\page\loading.html" />
+    <Content Include="view\common\page\login_start.html" />
+    <Content Include="view\common\page\nonie.html" />
+    <Content Include="view\common\page\version.html" />
+    <Content Include="view\ice\css\applist.css" />
+    <Content Include="view\ice\css\vpn.css" />
+    <Content Include="view\ice\css\vpn2.css" />
+    <Content Include="view\ice\global.custom.js" />
+    <Content Include="view\ice\images\01.gif" />
+    <Content Include="view\ice\images\02.gif" />
+    <Content Include="view\ice\images\03.gif" />
+    <Content Include="view\ice\images\04.gif" />
+    <Content Include="view\ice\images\ajax-loader-ice.gif" />
+    <Content Include="view\ice\images\ajax-loader.gif" />
+    <Content Include="view\ice\images\barbg.png" />
+    <Content Include="view\ice\images\bg.png" />
+    <Content Include="view\ice\images\bn_inchon.gif" />
+    <Content Include="view\ice\images\bodybg.gif" />
+    <Content Include="view\ice\images\bookmark.png" />
+    <Content Include="view\ice\images\box.gif" />
+    <Content Include="view\ice\images\bult01.gif" />
+    <Content Include="view\ice\images\buttonbg.png" />
+    <Content Include="view\ice\images\caution_box.gif" />
+    <Content Include="view\ice\images\footerbg.gif" />
+    <Content Include="view\ice\images\ico.gif" />
+    <Content Include="view\ice\images\icon_bookmark.png" />
+    <Content Include="view\ice\images\icon_resolution.gif" />
+    <Content Include="view\ice\images\icon_user_control.png" />
+    <Content Include="view\ice\images\information.png" />
+    <Content Include="view\ice\images\login_banner01.gif" />
+    <Content Include="view\ice\images\login_banner02.gif" />
+    <Content Include="view\ice\images\login_banner03.gif" />
+    <Content Include="view\ice\images\login_h1.gif" />
+    <Content Include="view\ice\images\login_notice.gif" />
+    <Content Include="view\ice\images\login_visual.jpg" />
+    <Content Include="view\ice\images\logo.png" />
+    <Content Include="view\ice\images\logout.png" />
+    <Content Include="view\ice\images\nudge-icon-arrow-down.png" />
+    <Content Include="view\ice\images\nudge-icon-arrow-lr.png" />
+    <Content Include="view\ice\images\nudge-icon-arrow-up.png" />
+    <Content Include="view\ice\images\nudge-icon-return.png" />
+    <Content Include="view\ice\images\parea_btmbg.gif" />
+    <Content Include="view\ice\images\parea_topbg.gif" />
+    <Content Include="view\ice\images\popbg.gif" />
+    <Content Include="view\ice\images\pop_h2_ti.gif" />
+    <Content Include="view\ice\images\pop_h2_ti01.gif" />
+    <Content Include="view\ice\images\service.png" />
+    <Content Include="view\ice\images\user_control.png" />
+    <Content Include="view\ice\images\visual_bg.jpg" />
+    <Content Include="view\ice\image\ajax-loader-big.gif" />
+    <Content Include="view\ice\image\ajax-loader.gif" />
+    <Content Include="view\ice\image\alert-red-small.png" />
+    <Content Include="view\ice\image\alert-small.gif" />
+    <Content Include="view\ice\image\app_android.png" />
+    <Content Include="view\ice\image\app_web.png" />
+    <Content Include="view\ice\image\app_windows.png" />
+    <Content Include="view\ice\image\backdrop.png" />
+    <Content Include="view\ice\image\box_close.png" />
+    <Content Include="view\ice\image\client_android.png" />
+    <Content Include="view\ice\image\client_ios.png" />
+    <Content Include="view\ice\image\client_linux.png" />
+    <Content Include="view\ice\image\client_windows.png" />
+    <Content Include="view\ice\image\info.png" />
+    <Content Include="view\ice\image\logo.png" />
+    <Content Include="view\ice\image\logo_top.png" />
+    <Content Include="view\ice\image\manual.png" />
+    <Content Include="view\ice\image\num.png" />
+    <Content Include="view\ice\image\remove.png" />
+    <Content Include="view\ice\image\seperator.png" />
+    <Content Include="view\ice\image\ssldefault.png" />
+    <Content Include="view\ice\message.res.js" />
+    <Content Include="view\ice\pagemap.res.js" />
+    <Content Include="view\ice\page\activex_frame.html" />
+    <Content Include="view\ice\page\applist.html" />
+    <Content Include="view\ice\page\loading.html" />
+    <Content Include="view\ice\page\login_start.html" />
+    <Content Include="view\ice\page\vpn_guide.html" />
+    <Content Include="view\ice\page\vpn_service.html" />
+    <Content Include="view\ice\resources\EPKIWCtl.cab" />
+    <Content Include="view\ice\resources\EPKIWCtl.exe" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="build.bat" />
+    <None Include="sftp-config.json" />
+    <None Include="view\ice\resources\evpn%2520manual.hwp" />
+    <None Include="view\ice\resources\faq.hwp" />
+    <None Include="view\ice\resources\vaccine.pptx" />
+    <None Include="view\ice\resources\winfw-1.pptx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>27225</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

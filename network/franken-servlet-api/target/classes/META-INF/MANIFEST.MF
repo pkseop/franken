@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1445225603066
+Build-Jdk: 1.7.0_25
+Built-By: patchboys
+Bundle-Description: Franken is stems from franken project and use for ss
+ lplus.
+Bundle-DocURL: http://future.co.kr/
+Bundle-ManifestVersion: 2
+Bundle-Name: Franken Servlet API
+Bundle-SymbolicName: kr.co.future.servlet.api
+Bundle-Vendor: Franken Project
+Bundle-Version: 3.0.0
+Created-By: Apache Maven Bundle Plugin
+Export-Package: kr.co.future.servlet.api;version="3.0.0";uses:="javax.se
+ rvlet.http",javax.servlet;version="3.0.0";uses:="javax.servlet.annotati
+ on,javax.servlet.descriptor",javax.servlet.annotation;version="3.0.0";u
+ ses:="javax.servlet",javax.servlet.descriptor;version="3.0.0",javax.ser
+ vlet.http;version="3.0.0";uses:="javax.servlet"
+Tool: Bnd-2.1.0.20130426-122213

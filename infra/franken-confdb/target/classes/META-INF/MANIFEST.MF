@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1445225542289
+Build-Jdk: 1.7.0_25
+Built-By: patchboys
+Bundle-Description: Franken is stems from franken project and use for ss
+ lplus.
+Bundle-DocURL: http://future.co.kr/
+Bundle-ManifestVersion: 2
+Bundle-Name: Franken Config Database
+Bundle-SymbolicName: kr.co.future.confdb
+Bundle-Vendor: Franken Project
+Bundle-Version: 0.11.2
+Created-By: Apache Maven Bundle Plugin
+Export-Package: kr.co.future.confdb;version="0.11.2";uses:="kr.co.future
+ .api",kr.co.future.confdb.file;version="0.11.2";uses:="kr.co.future.cod
+ ec,kr.co.future.confdb"
+Import-Package: kr.co.future.api,kr.co.future.codec;version="[2.2,3)",or
+ g.json;version="[1.1,2)",org.slf4j;version="[1.7,2)"
+Main-Class: kr.co.future.confdb.file.Console
+Tool: Bnd-2.1.0.20130426-122213

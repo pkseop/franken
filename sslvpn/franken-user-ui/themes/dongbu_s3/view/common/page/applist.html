@@ -1,0 +1,64 @@
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a title="WeGuardia™ SSLplus" class="brand s_top_image" href="#"></a>
+            <div class="seperator">
+            </div>
+            <ul class="nav" style="margin-top: 20px">
+                <li><a href="#"><span id="lbl_name"></span>(<span class="s_id"></span>)</a> </li>
+                <li>
+                    <div id="lbl_ip">
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        접속시간 <span id="lbl_timer">00:00:00</span></div>
+                </li>
+                <li id="area_timeout">
+                    <div>
+                        로그아웃까지 <span id="lbl_timeout">00:00</span></div>
+                </li>
+                <li id="area_expirydatecount">
+                    <div>
+                        <span id="lbl_expirydatecount">계정만료 0 일전</span></div>
+                </li>
+                <li id="area_expirydate">
+                    <div>
+                        유효기간 <span id="lbl_StartAt">2014-01-01</span> ~ <span id="lbl_ExpireAt">2014-03-31</span></div>
+                </li>
+            </ul>
+            <ul class="nav pull-right" style="margin-top: 12px">
+                <button id="btn_change_password" class="btn">
+                    암호 변경</button>
+                <button id="btn_logout" class="btn btn-primary">
+                    로그아웃</button>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="top_notice alert navbar-fixed-top">
+    <i class="icon"></i><span class="msg"></span>
+</div>
+<div class="row s_main">
+    <div class="span4 s_left">
+        <div class="row s_notice_image">
+        </div>
+        <div class="row">
+            <h4 class="s_no_underline">
+                공지사항</h4>
+            <div class="s_notice_content">
+            </div>
+        </div>
+    </div>
+    <div class="span6 s_right">
+        <h4>
+            애플리케이션 목록</h4>
+        <div class="well form-search">
+            <label class="control-label" for="search_app" style="vertical-align: -2px; margin-right: 10px">
+                검색</label>
+            <input id="search_app" type="text" class="input-large search-query" placeholder="검색" />
+        </div>
+        <ul id="applist">
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+kr/co/future/codec/FastEncodingRule.class
+kr/co/future/codec/BinaryForm.class
+kr/co/future/codec/Base64.class
+kr/co/future/codec/EncodedStringCache.class
+kr/co/future/codec/TypeMismatchException.class
+kr/co/future/codec/CustomCodec.class
+kr/co/future/codec/FastCustomCodec.class
+kr/co/future/codec/EncodingRule.class
+kr/co/future/codec/UnsupportedTypeException.class

@@ -1,0 +1,10 @@
+<ipojo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="org.apache.felix.ipojo http://felix.apache.org/ipojo/schemas/CURRENT/core.xsd"
+	xmlns="org.apache.felix.ipojo">
+	<instance component="frodo-userui-loader" />
+	<instance component="frodo-passwd-reset-service" />
+	<instance component="frodo-passwd-reset-servlet" />
+	<instance component="frodo-reset-script-factory" />
+	<instance component="client-download-config-api" />
+	<instance component="client-download-script-factory" />
+</ipojo>

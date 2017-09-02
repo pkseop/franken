@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>PayloadContent</key>
+		<array>
+			<dict>
+				<key>IPSec</key>
+				<dict>
+					<key>AuthenticationMethod</key>
+					<string>SharedSecret</string>
+					<key>RemoteAddress</key>
+					<string>%DEVICE_IP%</string>
+				</dict>
+				<key>IPv4</key>
+				<dict>
+					<key>OverridePrimary</key>
+					<integer>0</integer>
+				</dict>
+				<key>PayloadDescription</key>
+				<string>Configures VPN settings, including authentication.</string>
+				<key>PayloadDisplayName</key>
+				<string>VPN (SSLplusVPN)</string>
+				<key>PayloadIdentifier</key>
+				<string>com.future.vpn.vpn1</string>
+				<key>PayloadOrganization</key>
+				<string></string>
+				<key>PayloadType</key>
+				<string>com.apple.vpn.managed</string>
+				<key>PayloadUUID</key>
+				<string>F3671E86-F9FB-4752-97AE-DF65A28C8E05</string>
+				<key>PayloadVersion</key>
+				<integer>1</integer>
+				<key>Proxies</key>
+				<dict />
+				<key>UserDefinedName</key>
+				<string>SSLplusVPN</string>
+				<key>VPNType</key>
+				<string>IPSec</string>
+			</dict>
+		</array>
+		<key>PayloadDescription</key>
+		<string>Default VPN Setting
+			기본 VPN을 자동으로 설정해줍니다.</string>
+		<key>PayloadDisplayName</key>
+		<string>SSLplusVPN</string>
+		<key>PayloadIdentifier</key>
+		<string>com.future.vpn</string>
+		<key>PayloadOrganization</key>
+		<string></string>
+		<key>PayloadRemovalDisallowed</key>
+		<false />
+		<key>PayloadType</key>
+		<string>Configuration</string>
+		<key>PayloadUUID</key>
+		<string>B2807BAF-9BDA-4EA7-B68B-CCCFA29A556D</string>
+		<key>PayloadVersion</key>
+		<integer>1</integer>
+	</dict>
+</plist>

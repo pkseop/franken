@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<link rel="stylesheet" href="dijit/themes/claro/claro.css" media="screen">
+	<link rel='stylesheet' href='css/vpn.css'/>
+	<script src="dojo/dojo.js"></script>
+
+	<script>
+		dojo.require("dijit.dijit");
+		dojo.require("dojox.layout.TableContainer");
+		dojo.require("dijit.form.TextBox");
+		dojo.require("dijit.form.Textarea");
+		dojo.require("dijit.form.DateTextBox");
+		dojo.require("dijit.form.CheckBox");
+		dojo.require("dijit.form.NumberSpinner");
+		dojo.require("dijit.form.NumberTextBox");
+
+		require(['dojo/on', 'dojo/dom', 'dojo/mouse', 'dojo/parser', 'dojo/request', 'dojo/json', 'dojo/domReady!'], function(on, dom, mouse, parser, request, JSON){
+			//to use dojo js normally, this should be called.
+			parser.parse();
+			
+			var no = #APPLICANT_PERNR;
+			var approve = dom.byId('bt_approve');
+			var reject = dom.byId('bt_reject');
+			var search = dom.byId('bt_search');
+
+			on(approve, 'click', function(event) {
+				SendRequest(true);
+			});
+
+			on(reject, 'click', function(event) {
+				SendRequest(false);
+			});
+
+			on(search, 'click', function(event) {
+				if(form_next.state == 'Error')
+				{
+					alert('입력 값이 올바르지 않습니다.');
+					return;	
+				}
+				
+				var next = dom.byId('form_next');
+				var nextReq = 'getUserInfo?applicantPernr=' + next.value;
+				request.get(nextReq, {
+					handleAs: 'json'
+				}).then(function(data) {
+					if (data['Result'] == 'Fail')
+					{
+						alert('상위 결재자 정보를 얻어오지 못했습니다.');
+						return;
+					}
+
+					var name = dom.byId('form_next_name');
+					var depart = dom.byId('form_next_depart');
+					name.value = data['ENAME'];
+					depart.value = data['ORGTXT'];
+				}, function(error) {
+					alert(error.stack);
+				}, function(event) {
+					
+				});
+			});
+						
+			var form_decision = dom.byId('form_decision');
+			//restrict special char
+			on(form_decision, "keypress", function(evt) {
+				if(isSpecialChar(evt)) {
+					dojo.stopEvent(evt);
+				}
+			});
+
+			var query = 'getVpnUserSimpleInfo?applicantPernr=' + no;
+			request.get(query, {
+				handleAs: 'json'
+			}).then(function(data) {
+				if (data['Result'] == 'Fail')
+				{
+					alert('신청자 정보를 얻어오지 못했습니다.');
+					return;
+				}
+
+				var name = dom.byId('form_name');
+				var depart = dom.byId('form_depart');
+				var date_from = dom.byId('form_date_from');
+				var date_to = dom.byId('form_date_to');
+				var reason = dom.byId('form_reason');
+				var basis = dom.byId('form_basis');
+
+				name.value = data['Data']['ENAME'];
+				depart.value = data['Data']['ORGTXT'];
+				date_from.value = data['Data']['START_DATE'];
+				date_to.value = data['Data']['END_DATE'];
+				reason.value = data['Data']['REQUEST_REASON'];
+				basis.value = data['Data']['RELEVANT_BASE'];
+
+				ShowHigher(#SECMANAGER);
+
+			}, function(error){
+				alert(error.stack);
+			}, function(event){
+				
+			});
+
+			function SendRequest(isApprove) {
+				var decision = dom.byId('form_decision');
+				var next = dom.byId('form_next');
+
+				if (CheckNull(decision.value))
+				{
+					alert('결재/반려 사유를 입력하십시오');
+					return;
+				}
+
+				var json = {
+					"applicantPernr": no,
+					"decisionPernr": #DECISON_PERNR,
+					"decisionResult": isApprove ? "approve" : "reject",
+					"decisionReason": decision.value
+				}
+
+				var isNext = #SECMANAGER;
+				if (isNext)
+				{
+					var nName = dom.byId('form_next_name');
+					if (CheckNull(nName.value))
+					{
+						alert('상위 결재자 정보를 조회하십시오.');
+						return;
+					}
+					json['nextDecisionPernr'] = next.value;
+				}
+					
+
+				var temp = JSON.stringify(json);
+				request.post('decisionVpnAccount', {
+					data: temp,
+					handleAs: 'json'
+				}).then(function(data) {
+					if (data.Result == 'Success')
+						window.close(alert(data.ResultMessage));
+					else
+						alert('결재/반려를 정상적으로 처리하지 못했습니다.');
+				}, function(error) {
+					alert(error.stack);
+				}, function(event) {
+					
+				});
+			}
+			//parser.parse();
+		});
+
+		function CheckNull(value) {
+			return value == null || value == '';
+		}
+
+		function ShowHigher(value) {
+			var higher = document.getElementById('div_higher');
+			higher.style.display = value ? '' : 'none';
+		}
+		
+		function isSpecialChar(evt) {
+			var pattern = /[^(가-힣ㄱ-ㅎㅏ-ㅣa-zA-Z0-9,. )!@#$%^&*_=+?/<>~'";:|\-]/gi;  
+			var regex = new RegExp(pattern);
+			var key = String.fromCharCode(!evt.charCode ? evt.which : evt.charCode);
+			if (regex.test(key)) {			   
+			   return true;
+			}
+			return false;
+		}
+	</script>
+</head>
+<body class="claro">
+	<div class="wrap">
+		<div style="margin:-10px -1px 0 -1px"><div class="title_first"></div><div class="title_pt">신청내용</div><div class="title_last"></div></div>
+	<!--<div data-dojo-type="dojox.layout.TableContainer" data-dojo-props="cols:1" id="tc1">
+		<div data-dojo-type='dijit.form.TextBox' title='성명' value='iouyi3'></div>
+		<div data-dojo-type='dijit.form.TextBox' title='소속' value=''></div>
+		<div data-dojo-type='dijit.form.TextBox' title='신청기간' value=''></div>
+		<div data-dojo-type='dijit.form.TextBox' title='신청사유' value=''></div>
+		<div data-dojo-type='dijit.form.TextBox' title='관련근거' value=''></div>
+	</div>-->
+		<div class="clear" style="padding:0 30px 15px 15px;*padding:5px 15px 15px 15px">
+			<table cellpadding="0" cellspacing="0" border="0" class="contentA">
+				<tr>
+					<td class="stats_title_first"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td class="stats_title"><div class="bul01" style="letter-spacing:23px">성명</div></td>
+					<td><input id='form_name' data-dojo-type='dijit/form/TextBox' class='box_input' readonly="readonly" /></td>
+				</tr>
+				<tr>
+					<td class="stats_title" style="height:2px"><div class="line"></div></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td class="stats_title"><div class="bul01" style="letter-spacing:23px">소속</div></td>
+					<td><input id='form_depart' data-dojo-type='dijit/form/TextBox' class='box_input' readonly="readonly" /></td>
+				</tr>
+				<tr>
+					<td class="stats_title" style="height:2px"><div class="line"></div></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td class="stats_title"><div class="bul01">신청기간</div></td>
+					<td>
+						<input id='form_date_from' data-dojo-type='dijit/form/TextBox' readonly="readonly" style='width:100px' class="box_input"/>
+						<label class="label">~</label>
+						<input id='form_date_to' data-dojo-type='dijit/form/TextBox' readonly="readonly" style='width:100px;margin-left:-1px' class="box_input"/>
+					</td>
+				</tr>
+				<tr>
+					<td class="stats_title" style="height:2px"><div class="line"></div></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td class="stats_title"><div class="bul01">신청사유</div></td>
+					<td><input id='form_reason' data-dojo-type='dijit/form/TextBox' style='width:99%;*width:97%;' class='box_input' readonly="readonly" /></td>
+				</tr>
+				<tr>
+					<td class="stats_title" style="height:2px"><div class="line"></div></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td class="stats_title"><div class="bul01">관련근거</div></td>
+					<td><input id='form_basis' data-dojo-type='dijit/form/TextBox' style='width:99%;*width:97%;' class='box_input' readonly="readonly" /></td>
+				</tr>
+				<tr>
+					<td class="stats_title_last"></td>
+					<td></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div class="shadow"></div>
+
+	<div class="wrap">
+		<div style="margin:-30px -1px 0 -1px"><div class="title_first"></div><div class="title_pt">결재내용</div><div class="title_last"></div></div>
+		<div class="clear" style="padding:0 30px 15px 15px;*padding:15px">
+			<table cellpadding="0" cellspacing="0" border="0" class="contentA">
+				<tr>
+					<td class="stats_title_first"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td class="stats_title"><div class="bul02">결재/반려사유<font color="#db0011">*</font></div></td>
+					<td><input id='form_decision' data-dojo-type='dijit/form/TextBox' style='width:99%;*width:97%;' class='box_input' /></td>
+				</tr>
+				<tr>
+					<td class="stats_title_last"></td>
+					<td></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div class="shadow"></div>
+
+	<div class="wrap" id='div_higher' style='display:none'>
+		<div style="margin:-30px -1px 0 -1px"><div class="title_first"></div><div class="title_pt">상위 결재자</div><div class="title_last"></div></div>
+		<div class="clear" style="padding:0 30px 15px 15px;*padding:15px">
+			<table cellpadding="0" cellspacing="0" border="0" class="contentA">
+				<tr>
+					<td class="stats_title_first"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td class="stats_title"><div class="bul01" style="letter-spacing:23px">사번</div></td>
+					<td>
+						<!--input id='form_next' data-dojo-type='dijit/form/NumberTextBox' class='ui_stretch' value='2060148' readonly></input-->
+						<input id='form_next' data-dojo-id='form_next' data-dojo-type='dijit/form/NumberTextBox' class='box_input' style="vertical-align:middle" data-dojo-props="constraints:{pattern:'#'}"/>
+							<button id='bt_search' class="b_search" onmousedown="this.className='b_search ov';"	onmouseup="this.className='b_search';"
+								style="vertical-align:middle;*margin-left:3px;" title="검색"/>
+					</td>
+				</tr>
+				<tr>
+					<td class="stats_title" style="height:2px"><div class="line"></div></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td class="stats_title"><div class="bul01" style="letter-spacing:23px">성명</div></td>
+					<td><input id='form_next_name' data-dojo-type='dijit/form/TextBox' class='box_input' readonly="readonly" /></td>
+				</tr>
+				<tr>
+					<td class="stats_title" style="height:2px"><div class="line"></div></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td class="stats_title"><div class="bul01" style="letter-spacing:23px">소속</div></td>
+					<td><input id='form_next_depart' data-dojo-type='dijit/form/TextBox' class='box_input' readonly="readonly" /></td>
+				</tr>
+				<tr>
+					<td class="stats_title_last"></td>
+					<td></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div class="shadow" style='display:none'></div>
+	<div class="text-center" style="margin-top:5px">
+		<button id='bt_approve' class="b_bg" onmousedown="this.className='b_bg ov';" onmouseup="this.className='b_bg';">결재</button>
+		<button id='bt_reject' class="b_bg" onmousedown="this.className='b_bg ov';" onmouseup="this.className='b_bg';">반려</button>
+	</div>
+</body>
+</html>

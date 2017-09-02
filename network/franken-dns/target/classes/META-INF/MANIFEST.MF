@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1445225585080
+Build-Jdk: 1.7.0_25
+Built-By: patchboys
+Bundle-Description: Franken is stems from franken project and use for ss
+ lplus.
+Bundle-DocURL: http://future.co.kr/
+Bundle-ManifestVersion: 2
+Bundle-Name: Franken DNS
+Bundle-SymbolicName: kr.co.future.dns
+Bundle-Vendor: Franken Project
+Bundle-Version: 0.3.0
+Created-By: Apache Maven Bundle Plugin
+Export-Package: kr.co.future.dns;version="0.3.0",kr.co.future.dns.rr;ver
+ sion="0.3.0";uses:="kr.co.future.dns"
+Import-Package: kr.co.future.api,kr.co.future.dns;version="[0.3,1)",kr.c
+ o.future.dns.rr;version="[0.3,1)",org.slf4j;version="[1.7,2)"
+Tool: Bnd-2.1.0.20130426-122213

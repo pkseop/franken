@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1445225579850
+Build-Jdk: 1.7.0_25
+Built-By: patchboys
+Bundle-Description: Franken is stems from franken project and use for ss
+ lplus.
+Bundle-DocURL: http://future.co.kr/
+Bundle-ManifestVersion: 2
+Bundle-Name: Franken Log Storage
+Bundle-SymbolicName: kr.co.future.logstorage
+Bundle-Vendor: Franken Project
+Bundle-Version: 1.12.2
+Created-By: Apache Maven Bundle Plugin
+Export-Package: kr.co.future.logstorage;version="1.12.2";uses:="kr.co.fu
+ ture.confdb,kr.co.future.logstorage.index",kr.co.future.logstorage.file
+ ;version="1.12.2",kr.co.future.logstorage.index;version="1.12.2"
+Import-Package: kr.co.future.codec;version="2.2.0",kr.co.future.confdb;v
+ ersion="0.11.2",kr.co.future.api,kr.co.future.cron;version="[1.6,2)",kr
+ .co.future.logstorage.file;version="[1.12,2)",kr.co.future.logstorage.i
+ ndex;version="[1.12,2)",org.slf4j;version="[1.7,2)",kr.co.future.msgbus
+ .handler;resolution:=optional,kr.co.future.msgbus;resolution:=optional,
+ kr.co.future.confdb.file;version="0.11.2"
+Tool: Bnd-2.1.0.20130426-122213

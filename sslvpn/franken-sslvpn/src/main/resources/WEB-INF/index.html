@@ -1,0 +1,39 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!-- Consider adding a manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=emulateIE9" />
+        <link rel="stylesheet" type="text/css" href="css/style.css" />		
+        <title>소프트웨어 등록</title>
+		<script src="js/jquery-1.6.4.min.js"></script>
+    </head>
+    <body>
+        <div id="container">
+	    	<h3>소프트웨어 등록</h3>
+	    	<form>
+				<div>
+	    			<span>시리얼</span>
+	    			<input readonly type="text" id="serial" />
+	    		</div>
+	    		<div>
+	    			<span>라이센스키</span>
+	    			<textarea id="license"></textarea>
+	    		</div>
+	    		
+	    		<div id="message">
+	    			<img src="img/error.png" width="27" height="27"/>
+	    			<span>라이센스키가 올바르지 않습니다.</span>
+	    		</div>
+	    		<div id="submit">
+	    			<input id="submitButton" type="button" value="등록" />
+	    		</div>
+	    	</form>
+	  	</div>
+	  	<script src="js/script.js" type="text/javascript"></script>
+    </body>
+</html>

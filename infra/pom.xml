@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>kr.co.future</groupId>
+		<artifactId>franken</artifactId>
+		<version>1.0.0</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+	<groupId>kr.co.future</groupId>
+	<version>1.0.0</version>
+	<artifactId>franken-infra-pom</artifactId>
+	<name>Franken Infra POM</name>
+	<packaging>pom</packaging>
+	<modules>		
+		<module>franken-api</module>
+		<module>franken-codec</module>
+		<module>franken-confdb</module>
+		<module>franken-core</module>
+		<module>franken-cron</module>
+		<module>franken-ipojo</module>
+		<module>franken-dom</module>
+		<module>franken-msgbus</module>
+		<module>franken-ca</module>
+		<module>franken-rrd</module>
+		<module>franken-webconsole</module>		
+	</modules>
+</project>

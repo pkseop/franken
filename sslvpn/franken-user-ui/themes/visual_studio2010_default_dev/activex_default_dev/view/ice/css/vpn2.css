@@ -1,0 +1,86 @@
+fieldset div.controls {
+	display: inline;
+}
+
+button.btn {
+	padding: 0px 5px;
+	background: url('../images/buttonbg.png') no-repeat 0px 0px;
+	height: 32px;
+	color: white;
+}
+
+#login_area {
+	width: 400px;
+}
+
+#login_area .login_btn {
+	width: 200px;
+}
+
+label { 
+	color: white;
+	font-weight: bold;
+}
+
+
+#btn_another {
+  background-size: 120px 32px;
+  width: 120px;
+  letter-spacing: -1px;
+  margin-left: 5px;
+}
+
+#btn_login_start {
+  background-size: 90px 32px;
+  width: 90px;
+}
+
+#btn_login {
+  background-size: 70px 32px;
+  width: 70px;
+  font-family: Arial;
+  font-weight: bold;
+}
+
+#btn_login_sga {
+  background-size: 70px 32px;
+  width: 70px;
+  font-family: Arial;
+  font-weight: bold;
+}
+
+#btn_lost_password {
+  margin-left: 185px;
+  margin-top: -18px;
+  float: left;
+  border: 0px;
+  color: white;
+  background: transparent;
+  cursor: pointer;
+}
+
+#btn_lost_password:hover {
+  text-decoration: underline;
+}
+
+input[disabled=disabled] {
+	color: #999;
+	background-color: #fff;
+}
+
+
+
+/* loading */
+
+.s_loading_cont {
+	background: url('../images/bg.png') repeat-x;
+	min-height: 500px;
+	height: auto !important;
+	height: 500px;
+	/* border-bottom: 10px solid #5A94DE; */
+	text-align: center;
+
+	color: #3C577B;
+	font-family: "Dotum";
+	font-size: 9pt;
+}

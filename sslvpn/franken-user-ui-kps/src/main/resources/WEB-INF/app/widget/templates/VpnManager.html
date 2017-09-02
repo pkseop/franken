@@ -1,0 +1,67 @@
+<div class=${baseClass}>
+	<div id="appLayout" class="demoLayout" data-dojo-type="dijit/layout/BorderContainer" data-dojo-props="design: 'center'">
+		<div class="edgePanel" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'top'">
+			<span id="title">VPN 관리자 - 신청 현황</span>
+		</div>
+		<div id="resultPane" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'center'" title="신청결과">
+			<span id="title">신청결과 확인(관리자용)</span>
+			<div id="filter">
+				<text>신청현황: </text>
+				<select id="filterDecisionStatus" data-dojo-type="dijit/form/Select">
+					<option value="all" selected="selected">모두</option>
+					<option value="0">1차 승인 대기</option>
+					<option value="1">2차 승인 대기</option>
+					<option value="2">3차 승인 대기</option>
+					<option value="3">최종 승인 대기</option>
+					<option value="4">계정생성완료</option>
+					<option value="5">1차 승인 반려</option>
+					<option value="6">2차 승인 반려</option>
+					<option value="7">3차 승인 반려</option>
+					<option value="8">최종 승인 반려</option>
+				</select>
+				<input id="filterRequestDegree" data-dojo-attach-point="filterRequestDegree_Node" style="width:100px;" data-dojo-type="dijit/form/TextBox" data-dojo-props="placeHolder: '신청차수'">
+				<input id="filterOrgtxt" data-dojo-attach-point="filterOrgtxt_Node" style="width:100px;" data-dojo-type="dijit/form/TextBox" data-dojo-props="placeHolder: '소속'">
+				<input id="filterPernr" data-dojo-attach-point="filterPernr_Node" style="width:100px;" data-dojo-type="dijit/form/TextBox" data-dojo-props="placeHolder: '사번'">
+				<input id="filterEname" data-dojo-attach-point="filterEname_Node"  style="width:100px;" data-dojo-type="dijit/form/TextBox" data-dojo-props="placeHolder: '성명'">
+				<button type="button" data-dojo-attach-event="onClick: search" class="b_search" onmousedown="this.className='b_search ov';"	onmouseup="this.className='b_search';"
+					style="vertical-align:middle;*margin-left:3px;" title="검색"></button>
+			</div>
+			<div id="resultGrid" style="width: 843px;height:350px" data-dojo-attach-point="resultGridNode"></div>			
+		</div>
+			
+		<div id="inputPane" data-dojo-type="dijit/layout/ContentPane" data-dojo-props="region: 'bottom'"  title="신청내용">				
+			<div id="fs1" data-dojo-type="dijit/Fieldset">
+				<legend><span id="title">신청 내용</span></legend>
+				<div>
+					<label for="ENAME">성명</label>
+					<input id="ENAME" data-dojo-attach-point="ENAME_Node" style="width:425px;" data-dojo-type="dijit/form/TextBox" disabled>
+				</div>
+				<div>
+					<label for="ORGTXT">소속</label>
+					<input id="ORGTXT" data-dojo-attach-point="ORGTXT_Node"  style="width:425px;" data-dojo-type="dijit/form/TextBox" disabled>
+				</div>
+				<div>
+					<label for="START_DATE">신청기간</label>
+					<input id="START_DATE" data-dojo-attach-point="START_DATE_Node" data-dojo-type="dijit/form/DateTextBox" disabled>
+					&nbsp;&nbsp;~&nbsp;&nbsp;
+					<input id="END_DATE" data-dojo-attach-point="END_DATE_Node" data-dojo-type="dijit/form/DateTextBox" disabled>					
+				</div>	
+				<div>
+					<label for="REQUEST_REASON">신청사유</label>
+					<textarea id="REQUEST_REASON" data-dojo-attach-point="REQUEST_REASON_Node" rows="2" style="width:420px;" data-dojo-type="dijit/form/SimpleTextarea" disabled></textarea>
+				</div>						
+				<div>
+					<label for="RELEVANT_BASE">관련근거</label>
+					<input id="RELEVANT_BASE" data-dojo-attach-point="RELEVANT_BASE_Node" data-dojo-type="dijit/form/TextBox" style="width:425px;" disabled>
+				</div>				
+			</div>
+			
+			<div id="fs2" data-dojo-type="dijit/Fieldset">
+				<legend><span id="title">결재 내용</span></legend>
+				<div id="approvalGrid" data-dojo-attach-point="approvalGridNode"></div>
+			</div>			
+		</div>
+	
+	</div>
+	
+</div>

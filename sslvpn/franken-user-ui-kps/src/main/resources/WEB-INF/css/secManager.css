@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    padding: 2em;
+    font-family: Lucida Sans,Lucida Grande,Arial !important;
+    font-size: 13px !important;
+    background: white;
+    color: #333;
+}
+
+h1 {
+	font-size:1.5em;
+}
+
+.break
+{
+float:none;
+clear:both;
+}
+
+html, body {		
+	height: 100%;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+}
+
+#title {
+	font-size:13pt;
+	font-weight:bold;
+	line-height:2em;
+}
+
+#secManagerContainerNode{
+	padding-top: 30px;
+	width: 100%;
+	height: 100%;
+}
+
+#appLayout {
+    height: 100%;
+	text-align: left;
+}
+
+.claro  .demoLayout  .edgePanel {
+    background-color: #d0e9fc;
+}
+
+.secManager {
+	width: 602px;
+	height: 500px;
+	margin: 0 auto;
+	text-align: center;
+	background-color: #E0E0E0;
+}
+
+#secManagerPane {
+	width: 100%;
+	height: 40%;
+}
+
+#secManagerGrid {
+	margin-top: 30px;
+	width: 843px;
+	height: 92%;	
+}
+
+* {
+    outline: none !important;
+}
+
+#filter {
+	float: right;
+}
+
+.b_bg {
+	width:93px; height:29px; color:#fff; font:bold 12px Gulim;
+	background:transparent url(../images/btn01.png) no-repeat;
+	border:0; overflow: hidden;
+}
+.b_bg.ov {background-position:0px 1px;}
+.b_search {
+	width:27px; height:24px;
+	background:transparent url(../images/btn02.png) no-repeat;
+	border:0; overflow: hidden;
+}
+.b_search.ov {background-position:0px 1px;}

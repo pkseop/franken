@@ -1,0 +1,24 @@
+<ipojo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="org.apache.felix.ipojo http://felix.apache.org/ipojo/schemas/CURRENT/core.xsd"
+	xmlns="org.apache.felix.ipojo">
+	<instance component="frodo-xtmconf-lasthit" />
+	<instance component="frodo-xtmconf-alg-plugin" />
+	<instance component="frodo-xtmconf-anti-plugin" />
+	<instance component="frodo-xtmconf-dpi-plugin" />
+	<instance component="frodo-xtmconf-etc-plugin" />
+	<instance component="frodo-xtmconf-filtering-plugin" />
+	<instance component="frodo-xtmconf-ha-plugin" />
+	<instance component="frodo-xtmconf-integrity-plugin" />
+	<instance component="frodo-xtmconf-ipsec-plugin" />
+	<instance component="frodo-xtmconf-manage-plugin" />
+	<instance component="frodo-xtmconf-nac-plugin" />
+	<instance component="frodo-xtmconf-network-plugin" />
+	<instance component="frodo-xtmconf-object-plugin" />
+	<instance component="frodo-xtmconf-policy-sync-plugin" />
+	<instance component="frodo-xtmconf-rollback-plugin" />
+	<instance component="frodo-xtmconf-ssl-plugin" />
+	<instance component="frodo-xtmconf-system-plugin" />
+	<instance component="frodo-xtmconf-utils-plugin" />
+	<instance component="frodo-xtmconf-waf-plugin" />
+	<instance component="frodo-xtmconf-bridgetun-cache" />
+</ipojo>

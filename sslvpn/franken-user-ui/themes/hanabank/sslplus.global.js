@@ -1,0 +1,1 @@
+var $g={theme:"common",bootstrap:"../../lib/bootstrap/css/bootstrap.min.css"}

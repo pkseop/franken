@@ -1,0 +1,334 @@
+﻿<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<link rel="stylesheet" href="dijit/themes/claro/claro.css" media="screen">
+	<link rel='stylesheet' href='css/vpn.css'/>
+	<script src="dojo/dojo.js"></script>
+	<script>
+		dojo.require("dijit.dijit");
+		dojo.require("dojox.layout.TableContainer");
+		dojo.require("dijit.form.TextBox");
+		dojo.require("dijit.form.DateTextBox");
+		dojo.require("dijit.form.CheckBox");
+		dojo.require("dijit.form.NumberSpinner");
+		dojo.require("dijit.form.NumberTextBox");
+
+		var MAX_LENGTH = 200;		
+		
+		require(['dojo/on', 'dojo/dom', 'dojo/mouse', 'dojo/parser', 'dojo/request', 'dojo/json', 'dojo/domReady!'], function(on, dom, mouse, parser, request, json) {
+			//to use dojo js normally, this should be called.
+			parser.parse();
+			 
+			var search_bt = dom.byId('search_bt');
+			var request_bt = dom.byId('request_bt');
+			var no = dom.byId('form_no');
+			var name = dom.byId('form_name');
+			var depart = dom.byId('form_depart');
+			var date_from = dom.byId('form_date_start');
+			var date_to = dom.byId('form_date_to');
+			var reason = dom.byId('form_reason');
+			var basis = dom.byId('form_basis');
+            var grant_info = dom.byId('form_grant_info');
+			
+			reason.maxLength = basis.maxLength = MAX_LENGTH;
+			dom.byId('label_reason').innerText = dom.byId('label_basis').innerText = '0 / ' + MAX_LENGTH + ' 자';
+
+			on(cancel_bt, 'click', function(event) {
+				window.location.href = 'vpn_welcome.html'
+			});
+
+			/*on(date_to, 'change', function(event) {
+				// not work...
+			});*/
+
+			on(reason, "keyup", function(event) {
+				display(reason, dom.byId('label_reason'));
+			});
+			
+			//restrict special char
+			on(reason, "keypress", function(evt) {
+				if(isSpecialChar(evt)) {
+					dojo.stopEvent(evt);
+				}
+			});
+			
+			//restrict special char
+			on(basis, "keypress", function(evt) {
+				if(isSpecialChar(evt)) {
+					dojo.stopEvent(evt);
+				}
+			});
+			
+			on(basis, 'keyup', function(event) {
+				display(basis, dom.byId('label_basis'));
+			});
+
+			function display(target, label) {
+				label.innerText = target.value.length + " / " + MAX_LENGTH + ' 자';
+				label.color = MAX_LENGTH - target.value.length > 10 ? '#000' : '#f00'
+			}
+
+			on(search_bt, 'click', function(event) {	
+				if(form_no.state == 'Error')
+				{
+					alert('입력 값이 올바르지 않습니다.');
+					return;	
+				}
+				
+				if (CheckNull(no.value))
+				{
+					alert('사번을 입력하십시오.');
+					return;
+				}
+
+				var query = 'getUserInfo?applicantPernr=' + no.value;
+
+
+				request.get(query, {
+					handleAs: 'json'
+				}).then(function(data) {
+					if (data['Result'] == "Fail")
+					{
+						name.value = '';
+						depart.value = '';
+						alert('존재하지 않는 사번입니다. 다시 확인해 주세요.');
+						return;
+					}
+
+					name.value = data['ENAME'];
+					depart.value = data['ORGTXT'];
+                    grant_info.value = data['GRANT_ENAME'] + '(' + data['GRANT_PERNR'] + ')';
+				}, function(error) {
+					alert(error.stack);
+				}, function(event) {
+					
+				});
+				
+			});
+
+			on(request_bt, 'click', function(event){
+				var reason = dom.byId('form_reason');
+				var basis = dom.byId('form_basis');
+
+				if (CheckNull(name.value) || CheckNull(depart.value))
+				{
+					alert('사원 정보를 조회하십시오.');
+					return;
+				}
+
+				if (CheckNull(date_from.value) || CheckNull(date_to.value) || CheckNull(reason.value) || CheckNull(basis.value))
+				{
+					alert('필수 입력 항목을 모두 입력하십시오');
+					return;
+				}
+				
+				if(date_start.state == 'Error' || date_to.state == 'Error')
+				{
+					alert('신청기간의 입력 값이 올바르지 않습니다.');
+					return;	
+				}
+				
+				var radio = dom.byId('radio_agree');
+				if (radio.checked)
+				{
+					var temp = {
+							"PERNR": no.value,
+							"startDate": date_from.value,
+							"endDate": date_to.value,
+							"requestReason": reason.value,
+							"relevantBase": basis.value
+						};
+					var str = json.stringify(temp);
+					/*var str = '{ "PERNR": "' + no.value + '", "startDate": "' + date_from.value + '", "endDate": "' + date_to.value + '", "requestReason": "' + reason.value + '", "relevantBase": "' + basis.value + '"}';*/
+					request.post('reqVpnAccount', {
+						data: str,
+						handleAs: 'json'
+					}).then(function(data) {
+						//alert(data.Result + '\n' + data.ResultMessage);
+						if (data.Result == 'Success')
+							alert('VPN 계정 신청이 완료 되었습니다.');
+						else
+							alert(data.ResultMessage);
+						window.location.href = 'vpn_welcome.html';
+					}, function(error){
+						alert(error.stack);
+					}, function(event){
+
+					});
+				}
+				else
+					alert('보안서약에 동의하셔야 합니다.');
+			});			
+			
+			initDateTextBoxMin();
+		});
+		
+		function CheckNull(value) {
+			return value == null || value == '';
+		}
+		
+		function isSpecialChar(evt) {
+			var pattern = /[^(가-힣ㄱ-ㅎㅏ-ㅣa-zA-Z0-9,. )!@#$%^&*_=+?/<>~'";:|\-]/gi; 
+			var regex = new RegExp(pattern);
+			var key = String.fromCharCode(!evt.charCode ? evt.which : evt.charCode);
+			if (regex.test(key)) {			   
+			   return true;
+			}
+			return false;
+		}
+		
+		function initDateTextBoxMin() {
+			var today = new Date();
+			date_start.constraints.min  = today;
+			date_to.constraints.min =  today;
+		}
+		
+		function setDateStartMax(state, date) {
+			if(state == 'Error' || date_to.value == 'Invalid Date')
+				;
+			else
+				date_start.constraints.max = date;
+		}
+		
+		function setDateToMin(state, date) {
+			if(state == 'Error' || date_start.value == 'Invalid Date')
+				;
+			else
+				date_to.constraints.min = date;
+		}
+		
+	</script>
+
+</head>
+<body class="claro">
+	<div class="wrap">
+		<div style="margin:-10px -1px 0 -1px"><div class="title_first"></div><div class="title_pt">VPN 사용 신청</div><div class="title_last"></div></div>
+	<!--div data-dojo-type="dojox.layout.TableContainer" data-dojo-props="cols:1" id="tc1">
+		<div data-dojo-type='dijit.form.TextBox' title='사번' value='2110373'></div>
+		<div data-dojo-type='dijit.form.TextBox' title='성명' value='이광호'></div>
+		<label>temp</label><input type='checkbox'></input>
+		<div data-dojo-type='dijit.form.TextBox' title='소속' value='당진사업처 행정지원팀'></div>
+		<div data-dojo-type='dijit.form.DateTextBox' title='신청기간(*)' value='2013-09-02'></div>
+		<label>신청기간</label><input></input>
+		<div data-dojo-type='dijit.form.TextBox' title='신청사유(*)' value='해외 출장'></div>
+		<div data-dojo-type='dijit.form.TextBox' title='관련근거(*)' value='인사노무처-1582'></div>
+		<div data-dojo-type='dijit.form.TextBox' title='보안서약' value=''></div>
+	</div-->
+		<div class="clear" style="padding:0 30px 15px 15px;*padding:5px 15px 15px 15px">
+			<table cellpadding="0" cellspacing="0" border="0" class="contentA">
+				<tr>
+					<td class="stats_title_first"></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td class="stats_title"><div class="bul01" style="letter-spacing:23px">사번</div></td>
+					<td>
+						<input id="form_no" data-dojo-id='form_no' data-dojo-type='dijit/form/NumberTextBox' class='box_input'  style="vertical-align:middle;" 
+							data-dojo-props="constraints:{pattern:'#'}" />
+						<button id='search_bt' class="b_search" onmousedown="this.className='b_search ov';"	onmouseup="this.className='b_search';"
+							style="vertical-align:middle;*margin-left:3px;" title="검색"/>
+					</td>
+				</tr>
+				<tr>
+					<td class="stats_title" style="height:2px"><div class="line"></div></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td class="stats_title"><div class="bul01" style="letter-spacing:23px">성명</div></td>
+					<td><input id='form_name' data-dojo-type='dijit/form/TextBox' class='box_input' readonly="readonly" /></td>
+				</tr>
+				<tr>
+					<td class="stats_title" style="height:2px"><div class="line"></div></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td class="stats_title"><div class="bul01" style="letter-spacing:23px">소속</div></td>
+					<td><input id='form_depart' data-dojo-type='dijit/form/TextBox' class='box_input' readonly="readonly" /></td>
+				</tr>
+                <tr>
+                    <td class="stats_title" style="height:2px"><div class="line"></div></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="stats_title"><div class="bul01">1차 승인자</div></td>
+                    <td><input id='form_grant_info' data-dojo-type재='dijit/form/TextBox' class='box_input' readonly="readonly" /></td>
+                </tr>
+				<tr>
+					<td class="stats_title" style="height:2px"><div class="line"></div></td>
+					<td></td>
+				</tr>
+
+				<tr>
+					<td class="stats_title"><div class="bul02">신청기간<font color="#db0011">*</font></div></td>
+					<td>
+						<input id='form_date_start' data-dojo-id='date_start' data-dojo-type='dijit/form/DateTextBox' data-dojo-props="constraints:{datePattern:'yyyy.M.d'}"
+							style='width:100px' class="box_input" onChange="setDateToMin(date_start.state, arguments[0]);"/>
+						<label class="label">~</label>
+						<input id='form_date_to' data-dojo-id='date_to' data-dojo-type='dijit/form/DateTextBox' data-dojo-props="constraints:{datePattern:'yyyy.M.d'}"
+							style='width:100px; margin-left:-1px' class="box_input" onChange="setDateStartMax(date_to.state, arguments[0]);" />
+					</td>
+				</tr>
+				<tr>
+					<td class="stats_title" style="height:2px"><div class="line"></div></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td class="stats_title"><div class="bul02">신청사유<font color="#db0011">*</font></div></td>
+					<td>
+						<input id='form_reason' type='text' data-dojo-type='dijit/form/TextBox' style='width:86%;*width:92%;' class='box_input'>
+						<font id='label_reason'></font>
+					</td>
+				</tr>
+				<tr>
+					<td class="stats_title" style="height:2px"><div class="line"></div></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td class="stats_title"><div class="bul02">관련근거<font color="#db0011">*</font></div></td>
+					<td>
+						<input id='form_basis' type='text' data-dojo-type='dijit/form/TextBox' style='width:86%;*width:92%;' class='box_input'>
+						<font id='label_basis'></font>
+					</td>
+				</tr>
+
+                <tr>
+                    <td class="stats_title" style="height:2px"><div class="line"></div></td>
+                    <td></td>
+                </tr>
+				<tr>
+					<td class="stats_title" style="vertical-align:top; padding-top:8px"><div class="bul01">보안서약</div></td>
+					<td style="height:300px; padding-top:4px">
+						<div class="box_input" style='width:99%;height:100%;overflow:auto;*width:97%;'>
+							<p>신청자는 원격근무를 수행함에 있어 가상사설망(VPN)을 통한 한전KPS 사내 정보시스템 접속 및 사용과 관련하여 다음 사항을 준수할 것을 엄숙히 서약합니다.</p>
+							<ol>
+								<li> 한전KPS 관련 규정, 지침 및 절차서를 준수한다.</li>
+								<li> 업무용으로만 가상사설망 사용 신청할 것을 서약하며, 업무 목적외 가상사설망 사용 신청을 하지 아니한다.</li>
+								<li> 부여 받은 전산장비, 인증 정보 및 매체(인증서 등)를 타인에게 절대 대여, 공유 및 유출하지 아니하며, 전산장비, 인증 정보 또는 인증매체(인증서 등) 분실시 즉시 회사 정보보안 담당자에게 신고한다.</li>
+								<li> 원격근무 중 작성한 문서(저장·열람·출력 등 모든 관련 행위 포함)는 해당 업무 목적에만 활용하고 타인에게 절대 유출하지 않으며, 회사 내부문서의 무단반출 및 외부 PC 및 휴대용저장매체(USB, 외장하드 등)에 저장하지 아니한다.</li>
+								<li> 전산장비 또는 계정 분실, 퇴직, 인사이동, 계약종료, 업무변경 등의 사유로 가상사설망(VPN) 사용을 중단할 경우 즉시 회사 정보보안 담당자에게 신고한다.</li>
+								<li> 가상사설망을 사용하는 컴퓨터는 부팅 패스워드, 로그온 패스워드, 화면보호기 패스워드를 설정하여 비인가자의 불법접근을 차단하고, 주기적인 보안 업데이트 및 최신 백신 프로그램을 설치하여 PC 방역관리를 항상 철저히 하며, 원격근무 사용 전에 바이러스 검사를 시행한다.</li>
+								<li> 가상사설망을 사용하는 컴퓨터에 승인되지 않은 프로그램은 설치하지 아니하며, P2P, 웹하드 등 악성코드 유포 가능 프로그램은 제거하여 사내 정보 유출 및 해킹 등 보안사고가 발생하지 않도록 보안에 유의한다.</li>
+								<li> 사내 정보의 비정상적인 사용, 오용, 남용으로 인해 발생되는 모든 문제의 민, 형사상의 책임은 서약자가 가진다.</li>
+								<li> 기타 보안사항들을 성실히 준수하며, <u><b>위의 사항 위반 및 사내 정보 유출 밎 해킹 등 보안사고 발생시 관련 법, 규정 및 지침에 따라 어떠한 민, 형사상의 책임과 엄중한 처벌도 감수</b></u>한다.</li>
+							</ol>
+							<p style="text-align:center"><b>위의 "보안서약"에 동의</b>하며 엄격히 준수할 것을 서약합니다.</p>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td class="stats_title_last"></td>
+					<td></td>
+				</tr>
+			</table>
+			<div class="text-center" style="margin-top:10px"><input type='radio' name='agree' id='radio_agree'/><label for="radio_agree" style="margin-right:10px">동의</label><input type='radio' name='agree' id='radio_agree2' checked="checked"/><label for="radio_agree2">동의 안함</label></div>
+		</div>
+	</div>
+	<div class="shadow"></div>
+	<div class="text-center" style="margin-top:5px">
+		<button id='request_bt' class="b_bg" onmousedown="this.className='b_bg ov';" onmouseup="this.className='b_bg';">신청</button>
+		<button id='cancel_bt' class="b_bg" onmousedown="this.className='b_bg ov';" onmouseup="this.className='b_bg';">취소</button>
+	</div>
+</body>
+</html>

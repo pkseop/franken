@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"> 
+	<title>NH농협생명/NH농협손해보험</title>
+	<script type="text/javascript" src="/jquery-1.7.2.min.js"></script>
+	<script>
+		function hov(loc,cls) {   
+		if(loc.className)   
+			loc.className=cls;
+		}
+		
+		function SSlStart()
+		{
+			var element = document.getElementById("TSGSSL");
+			var str= "/$host/setup_$host.exe";
+			element.DownloadAndSetup(str);
+		}
+
+
+	</script>
+	
+	<script language="javascript" event="FireNoticeMessage()" for="TSGSSL">
+		SSlStart();
+	</script>
+	
+	<style>
+		body {margin:0}
+		form {margin:0}
+		a { border:none; }
+		img { border:none; }
+		#box1 {height:31px; background-image:url(images/bg_top_02.png); background-repeat:repeat-x}
+		#box2 {height:560px; background-image:url(images/bg_main_01.png); background-repeat:no-repeat}
+		#box2_notice {width:235px; height:228px; float:left; margin:100px 0 0 650px; overflow:hidden; padding:0 0 0 10px; background-image:url(images/blit_01.png); background-repeat:no-repeat}
+		#box2_inner {width:160px; height:117px; float:left; margin:40px 0 0 650px; clear:both}
+		#footer {background-color:#F5F5F5; padding:3px 0 3px 10px; font:11px "tahoma"; color:#999999}
+		#object {width:0px; height:0px; padding:0px}
+		.b_interline {height:45px; margin:0; padding:0px; border:0px solid red}
+		.t_k {font-family:Dotum; font-size:12px; color:#2C2C2C; line-height:28px}
+		
+		/* 이미지용 롤오버 */
+		A.roll img { display:inline; border:0;} 
+		A.roll img.over { display:none; } 
+		A.roll:hover { border:0; }
+		A.roll:hover img { display:none; } 
+		A.roll:hover img.over { display:inline; }		
+	</style>
+	</head>
+	<body style="margin:0">
+		<div id="object">
+			  <object classid="clsid:12200639-C2ED-4137-829B-29462C7609A5"
+						  codebase="./sslplus.cab#version=1,0,0,1"
+						  id="TSGSSL" width= "0" height = "0">
+				</object>
+		</div>	
+		<div id="box1"><img src="images/bg_top_01.png" width="278px" height="31px" border="0" /></div>
+		<div id="box2">
+			<div id="box2_notice" align="left" class="t_k"></div>
+			<div id="box2_inner">
+				<div class="b_interline">
+					<a class="roll" href="/setup_$host.exe">
+						<img src="images/btn_w.png" />
+						<img src="images/btn_w_o.png" class="over" />
+					</a>
+				</div>
+				<div class="b_interline">
+					<a class="roll" href="/sslplus.pdf">
+						<img src="images/btn_m.png" />
+						<img src="images/btn_m_o.png" class="over" />
+					</a>					
+				</div>
+			</div>
+		</div>
+		<div id="footer">Copyrightⓒ2012 FutureSystem,Inc. All Rights Reserved.</div>
+		<script type="text/javascript">
+			$("#box2_notice").load('/external/notice');
+		</script>
+	</body>
+</html>

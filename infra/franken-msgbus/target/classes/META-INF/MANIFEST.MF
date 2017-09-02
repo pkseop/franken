@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1445225572315
+Build-Jdk: 1.7.0_25
+Built-By: patchboys
+Bundle-Description: Franken is stems from franken project and use for ss
+ lplus.
+Bundle-DocURL: http://future.co.kr/
+Bundle-ManifestVersion: 2
+Bundle-Name: Franken Message Bus
+Bundle-SymbolicName: kr.co.future.msgbus
+Bundle-Vendor: Franken Project
+Bundle-Version: 1.6.2
+Created-By: Apache Maven Bundle Plugin
+Export-Package: kr.co.future.msgbus;version="1.6.2";uses:="kr.co.future.
+ confdb,kr.co.future.msgbus.handler",kr.co.future.msgbus.handler;version
+ ="1.6.2";uses:="kr.co.future.msgbus,org.apache.felix.ipojo,org.apache.f
+ elix.ipojo.metadata"
+Import-Package: kr.co.future.api,kr.co.future.confdb;version="[0.11,1)",
+ kr.co.future.cron;version="[1.6,2)",kr.co.future.msgbus;version="[1.6,2
+ )",org.apache.felix.ipojo;version="[1.11,2)",org.apache.felix.ipojo.met
+ adata;version="[1.11,2)",org.apache.felix.ipojo.parser;version="[1.11,2
+ )",org.osgi.framework;version="[1.6,2)",org.osgi.util.tracker;version="
+ [1.4,2)",org.slf4j;version="[1.7,2)"
+Tool: Bnd-2.1.0.20130426-122213

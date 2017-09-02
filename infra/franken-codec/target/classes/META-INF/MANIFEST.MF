@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Export-Package: kr.co.future.codec;version="2.2.0"
+Built-By: patchboys
+Tool: Bnd-0.0.357
+Bundle-Name: Franken Codec
+Created-By: Apache Maven Bundle Plugin
+Bundle-Vendor: Franken Project
+Build-Jdk: 1.7.0_25
+Bundle-Version: 2.2.0
+Bnd-LastModified: 1445225525508
+Bundle-ManifestVersion: 2
+Bundle-Description: Franken is stems from franken project and use for 
+ sslplus.
+Import-Package: kr.co.future.codec;version="2.2"
+Bundle-SymbolicName: kr.co.future.codec
+Bundle-DocURL: http://future.co.kr/
+

@@ -1,0 +1,375 @@
+html, body {
+	padding: 0;
+	margin: 0;
+}
+
+img {
+	border: 0px;
+}
+
+.titlebanner {
+	background: url('../images/logo.png') no-repeat; 
+	float: left;
+	width: 250px;
+	height: 70px;
+	margin-top: 50px;
+	margin-left: 10px;
+}
+
+.maincont {
+	float: left;
+	width: 735px;
+}
+
+.container {
+	background: url('../images/bg.png') repeat-x;
+	min-height: 500px;
+	height: auto !important;
+	height: 500px;
+	/* border-bottom: 10px solid #5A94DE; */
+
+}
+
+.top_right {
+	float: right;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+ul.info div {
+	display: inline;
+}
+
+ul.info {
+	float: right;
+	margin: 0;
+	padding: 0;
+	margin-top: 10px;
+	margin-right: 8px;
+}
+
+ul.info li {
+	display: inline;
+	list-style: none;
+	font-size: 9pt;
+	color: white;
+	font-family: "Dotum";
+	border-right: 1px solid #ADC8E5;
+	padding-left: 10px;
+	padding-right: 10px;
+
+}
+
+.bigtab {
+	clear: both;
+	height: 55px;
+	background: url('../images/barbg.png') no-repeat;
+}
+
+.bigtab a img {
+	margin-top: 12px;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
+.contents {
+	background-color: white;
+	min-height: 200px;
+	height: auto !important;
+	height: 200px;
+	padding: 20px;
+	padding-top: 30px;
+}
+
+#footer_area {
+	position: fixed;
+	bottom: 30px;
+	padding-left: 30px;
+	font-size: 9pt;
+	font-family: 'Dotum';
+	color: #666;
+}
+
+.ie6 #footer_area, .ie7 #footer_area {
+	position: absolute;
+	bottom: 30px;
+	left: 30px;
+	font-size: 9pt;
+	font-family: 'Dotum';
+	color: #666;	
+}
+
+img.logo {
+	vertical-align: -50%
+}
+
+#applist {
+	margin-top: 0px;
+}
+
+#applist li {
+	list-style: none;
+	border-top: 1px solid #ADC8E5;
+	border-bottom: 1px solid #ADC8E5;
+	margin-top: -1px;
+	padding-top: 3px;
+	padding-left: 10px;
+	cursor: pointer;
+	cursor: hand;
+}
+
+#applist li:hover {
+	background-color: #E9F2F9;
+}
+
+#applist a {
+	font-size: 9pt;
+	font-family: 'Gulim';
+	color: #3A89D8;
+	height: 52px;
+	text-decoration: none;
+	cursor: pointer;
+	cursor: hand;
+}
+
+#applist a:hover span.underline {
+	text-decoration: underline;
+}
+
+#applist a span.underline {
+	width: 560px;
+	display: inline-block;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	width: 300px;
+}
+
+#applist a span.path {
+	float: right;
+	text-align: right;
+	margin-right: 10px;
+}
+
+#applist a img {
+	width: 32px;
+	height: 32px;
+}
+
+#applist li.noresult {
+	font-size: 9pt;
+	font-family: 'Gulim';
+	color: #666666;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+
+#cont_applist table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin-top: 20px;
+	margin-left: 40px;
+	width: 655px;
+}
+
+#cont_applist tr {
+	border-top: 3px solid #3375CE;
+	border-bottom: 1px solid #ADC8E5;
+}
+
+#cont_applist td {
+	background-color: #DCE5F4;
+	padding: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-family: 'Gulim';
+	font-size: 9pt;
+	font-weight: bold;
+}
+
+
+
+
+
+
+.box-popup {
+	position: absolute;
+	/*left: 50%;
+	top: 50%;*/
+
+	z-index: 9999;
+	display: none;			
+}
+
+.changepassword-size {
+	left: 261px;
+	top: 98px;
+
+	width: 734px;
+	height: 450px;
+
+	/* border: 1px solid red; */
+}
+
+.modal-backdrop {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	bottom: 0px;
+	right: 0px;
+}
+
+
+input[type=password], input[type=text] {
+	outline: none !important;
+}
+
+#passwordreset_frame {
+	border: 0px;
+	width: 735px;
+	height: 400px;
+}
+
+.top_notice {
+	font-size: 9pt;
+	font-family: "Dotum";
+	padding: 8px;
+	display: none;
+	cursor: pointer;
+}
+
+.top_notice a {
+	color: #0066CC
+}
+
+.top_notice.alert i.icon {
+	background: url("../image/alert-small.gif");
+	background-size: 16px 16px;
+	background-repeat: no-repeat;
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	vertical-align: -4px;
+	margin-right: 5px;
+}
+
+.alert {
+	background-color: #FFFF99;
+	border-bottom: 1px solid #ccc;
+}
+
+.alert:hover {
+	background-color: #FFFFD0;
+}
+
+.top_notice.alert-error i.icon {
+	background: url("../image/alert-red-small.png");
+	background-size: 16px 16px;
+	background-repeat: no-repeat;
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	vertical-align: -4px;
+	margin-right: 5px;
+}
+
+.alert-error {
+	background-color: #CC0000;
+	color: white;
+	border-bottom: 1px solid #666;
+}
+
+.alert-error:hover {
+
+}
+
+.mywell {
+	
+	background-color: #fff;
+	padding: 20px;
+	padding-top: 30px;
+
+}
+
+.mywell .well {
+	border-bottom: 1px solid #ADC8E5;
+	padding-bottom: 5px;
+	margin-bottom: 20px
+}
+
+.control-group {
+	margin: 14px 0px;
+}
+
+.control-group.error input {
+	border: 1px solid #cc0000;
+	background-color: #FCCFCF;
+}
+
+.control-group.error .help-block {
+	color: #cc0000;
+}
+
+.controls, .form-actions {
+	padding-left: 200px;
+}
+
+.controls input[type=text] {
+	width: 210px;
+	margin-top: -5px;
+}
+
+.form-actions {
+	border-top: 1px solid #ADC8E5;
+	margin-top: 10px;
+	padding-top: 5px;
+}
+
+small {
+	font-size: 1em;
+}
+
+#change { 
+	margin-left: 30px;
+	margin-top: 20px;
+	padding: 10px;
+	font-size: 9pt;
+	font-family: "Dotum"
+}
+
+#change label {
+	float: left;
+	width: 185px;
+	text-align: right;
+	padding-right: 15px;
+	font-weight: bold;
+}
+
+#change .well {
+	line-height: 1.5
+}
+
+#change .legendstyle {
+	background: url('../images/user_control.png') no-repeat 0px 0px;
+	width: 253px;
+	height: 25px;
+	margin-top: -30px;
+	margin-bottom: 20px;
+	margin-left: -40px;
+	border: 0px;
+}
+
+button.btn {
+  padding: 0px 5px;
+  background: url('../images/buttonbg.png') no-repeat 0px 0px;
+  height: 32px;
+  color: white;
+  border: 0;
+  font-family: "Dotum";
+  font-size: 9pt;
+}
+
+a {
+  outline:none;
+}
+

@@ -1,0 +1,76 @@
+.ui_stretch {width:100%;}
+.text_2row {width:100%;	height:48px;}
+button {min-width:64px;}
+
+body,html,div,blockquote,img,label {border:0; outline:none; margin:0; padding:0;}
+body {height:100%; background:#eee; color:#2c2c2c; font:12px Gulim;}
+.label {width:40px; vertical-align:middle;}
+.text-center {text-align:center; padding:3px;}
+.wrap {width:900px; margin:40px auto; margin-bottom:0px; background:#fff; border:1px solid #b5b6b6;}
+.clear {clear:both;}
+.title_first {
+	width:38px; height:41px; float:left;
+	background:url(../images/titlebar01.png) no-repeat 0 0; padding:0;
+}
+.title_pt {
+	width:860px; height:41px; float:left;
+	background:url(../images/titlebar02.png) repeat-x 0 0;
+	text-align:left; color:#003f98; font:bold 13px Gulim; padding-top:13px; *width:858px;
+}
+.title_last {
+	width:4px; height:41px; float:right;
+	background:url(../images/titlebar03.png) no-repeat 0 0; padding:0;
+}
+.contentA {
+	width:100%; margin:0; border-collapse:collapse;
+	color:#2c2c2c; font:12px Gulim;
+}
+.contentA td.stats_title_first {
+	width:125px; height:5px;
+	background:url(../images/statstitle01.png) no-repeat 0 0;
+}
+.contentA td.stats_title {
+	width:125px; height:30px; text-align:left; padding-left:2px;
+	background:url(../images/statstitle02.png) repeat-y 0 0;
+}
+.contentA td.stats_title_last {
+	width:125px; height:5px;
+	background:url(../images/statstitle03.png) no-repeat 0 0;
+}
+.bul01 {
+	margin-left:15px;	padding:0 12px;
+	background:url(../images/bul01.png) no-repeat 0 0;
+}
+.bul02 {
+	margin-left:15px;	padding:0 12px;
+	background:url(../images/bul02.png) no-repeat 0 0;
+}
+.line{
+	width:113px; margin-left:4px;
+	border-top:1px solid #c5d7f0;
+	border-bottom:1px solid #f6f9ff;
+	background:url(../images/statstitle02.png) repeat-y 0 0;
+	*height:0;
+}
+.shadow {
+	width:900px; height:7px; margin:0px auto;
+	background:url(../images/boxShadow.png) no-repeat 0 0; padding:0;
+}
+.box_input {
+	width:220px; height:20px; margin-left:15px; padding:2px 0 0 4px;
+	background-color:#fff; border:1px solid #a5bddf;
+	color:#2c2c2c; font:12px Gulim; text-align:left; line-height:20px;
+}
+.b_bg {
+	width:93px; height:29px; color:#fff; font:bold 12px Gulim;
+	background:transparent url(../images/btn01.png) no-repeat;
+	border:0; overflow: hidden;
+}
+.b_bg.ov {background-position:0px 1px;}
+.b_search {
+	width:27px; height:24px;
+	background:transparent url(../images/btn02.png) no-repeat;
+	border:0; overflow: hidden;
+}
+.b_search.ov {background-position:0px 1px;}
+

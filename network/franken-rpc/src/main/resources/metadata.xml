@@ -1,0 +1,4 @@
+<ipojo>
+	<instance component="rpc-agent" />
+	<instance component="rpc-script-factory" />
+</ipojo>

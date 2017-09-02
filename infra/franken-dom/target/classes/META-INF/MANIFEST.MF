@@ -1,0 +1,33 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1445225597421
+Build-Jdk: 1.7.0_25
+Built-By: patchboys
+Bundle-Description: Franken is stems from franken project and use for ss
+ lplus.
+Bundle-DocURL: http://future.co.kr/
+Bundle-ManifestVersion: 2
+Bundle-Name: Franken DOM
+Bundle-SymbolicName: kr.co.future.dom
+Bundle-Vendor: Franken Project
+Bundle-Version: 3.2.0
+Created-By: Apache Maven Bundle Plugin
+Export-Package: kr.co.future.dom.api;version="3.2.0";uses:="kr.co.future
+ .api,kr.co.future.confdb,kr.co.future.dom.model,kr.co.future.msgbus",kr
+ .co.future.dom.model;version="3.2.0";uses:="kr.co.future.confdb",kr.co.
+ future.dom.model.windows;version="3.2.0",kr.co.future.sslvpn.model;vers
+ ion="3.2.0";uses:="kr.co.future.confdb,kr.co.future.dom.model,kr.co.fut
+ ure.msgbus,kr.co.future.sslvpn.model.api",kr.co.future.sslvpn.model.api
+ ;version="3.2.0";uses:="kr.co.future.confdb,kr.co.future.dom.api,kr.co.
+ future.dom.model,kr.co.future.sslvpn.model"
+Import-Package: kr.co.future.msgbus;version="1.6.2",kr.co.future.confdb;
+ version="0.11.2",com.jolbox.bonecp;version="[0.8,1)",kr.co.future.api,k
+ r.co.future.confdb.file;version="[0.11,1)",kr.co.future.cron;version="[
+ 1.6,2)",kr.co.future.dns;version="[0.3,1)",kr.co.future.dom.api;version
+ ="[3.2,4)",kr.co.future.dom.model;version="[3.2,4)",kr.co.future.dom.mo
+ del.windows;version="[3.2,4)",kr.co.future.logstorage;version="[1.12,2)
+ ",kr.co.future.msgbus.handler;version="[1.6,2)",kr.co.future.sslvpn.mod
+ el;version="[3.2,4)",kr.co.future.sslvpn.model.api;version="[3.2,4)",or
+ g.json;version="[1.1,2)",org.osgi.framework;version="[1.6,2)",org.osgi.
+ util.tracker;version="[1.4,2)",org.slf4j;version="[1.7,2)",com.mysql.jd
+ bc;resolution:=optional;version="[5.1,6)"
+Tool: Bnd-2.1.0.20130426-122213

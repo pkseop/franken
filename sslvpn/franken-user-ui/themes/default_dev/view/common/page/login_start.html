@@ -1,0 +1,136 @@
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a title="WeGuardia™ SSLplus" class="brand s_top_image" href="#"></a>
+            <div class="seperator">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row s_main">
+    <div class="span4 s_left">
+        <div class="row s_notice_image">
+        </div>
+        <div class="row">
+            <h4 class="s_no_underline">
+                공지사항</h4>
+            <div class="s_notice_content">
+            </div>
+        </div>
+    </div>
+    <div class="span6 s_right">
+        <div class="row s_area_optional">
+            <div class="offset3 span3">
+                <button class="btn btn-mini" style="display: none" id="btn_lost_password">
+                    암호 분실</button>
+                <button class="btn btn-mini" style="display: none" id="btn_cert_center">
+                    인증센터</button>
+                <button class="btn btn-mini s_version">
+                    버전정보</button>
+                <!--                <button class="btn btn-mini">
+                    <i class="icon-question-sign"></i>도움말</button>-->
+            </div>
+        </div>
+        <form class="form-horizontal">
+        <fieldset>
+            <div>
+                <h4>
+                    Login</h4>
+            </div>
+            <div id="area_otp_choice" style="height: 30px; display: none;">
+                <input id="btn_rd_sms" type="radio">SMS인증
+                <input id="btn_rd_idn" type="radio">주민번호인증</div>
+            <div id="area_id" class="control-group">
+                <label class="control-label" for="txt_id">
+                    ID</label>
+                <div class="controls">
+                    <input class="input-large" id="txt_id" name="txt_id" type="text" />
+                    <span class="help-block" style="display: none">help-block</span>
+                </div>
+            </div>
+            <div id="area_confirm" class="control-group" style="display: none">
+                <div class="controls">
+                    <span class="help-block" id="lbl_confirm">
+                        <img alt="Loading" src="view/common/image/ajax-loader.gif" />
+                        인증 방식 확인 중... </span>
+                </div>
+            </div>
+            <div id="area_password" class="control-group" style="display: none">
+                <label class="control-label" for="txt_password">
+                    암호</label>
+                <div class="controls">
+                    <input class="input-large" id="txt_password" name="txt_password" type="password" />
+                    <span class="help-block" style="display: none">help-block</span>
+                </div>
+            </div>
+            <div id="area_otp" class="control-group" style="display: none">
+                <label id="lb_otp" class="control-label" for="txt_otp">
+                    OTP</label>
+                <div class="controls">
+                    <input class="input-large" id="txt_otp" name="txt_otp" type="password" />
+                    <span class="help-block" style="display: none">help-block</span>
+                </div>
+            </div>
+            <div id="area_error" class="control-group error">
+                <div class="controls">
+                    <span class="help-block" style="display: none" id="lbl_error">help-block</span>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button class="btn btn-success" id="btn_login_start">
+                    로그인 시작</button>
+                <button class="btn btn-primary" style="display: none" id="btn_login">
+                    로그인</button>
+                <button class="btn" style="display: none" id="btn_another">
+                    다른 아이디로 로그인</button>
+                <button class="btn btn-primary" style="display: none" id="btn_send_otp">
+                    SMS 발송</button>
+            </div>
+        </fieldset>
+        </form>
+        <button class="btn btn-primary" id="btn_cldn">
+            <a href="#"><i class="icon-download icon-white"></i>클라이언트 다운로드</a></button>
+    </div>
+</div>
+<div class="row s_area_cldn type1">
+    <button class="close">
+        ×</button>
+    <div class="span1 s_w420">
+        <h4 class="s_no_underline">
+            <small>클라이언트 다운로드</small></h4>
+        <div class="s_mt_22">
+            <button class="btn s_cldn windows">
+                <img src="view/common/image/client_windows.png"><span>윈도우</span></button>
+            <button class="btn s_cldn linux">
+                <img src="view/common/image/client_linux.png"><span>리눅스</span></button>
+            <button class="btn s_cldn ios">
+                <img src="view/common/image/client_ios.png"><span>iOS</span></button>
+            <button class="btn s_cldn android">
+                <img src="view/common/image/client_android.png"><span>안드로이드</span></button>
+        </div>
+    </div>
+    <div class="span1 s_w100 s_cldn_cont">
+        <h4 class="s_no_underline">
+            <small>매뉴얼 보기</small></h4>
+        <div class="s_mt_22">
+            <button class="btn s_cldn manual">
+                <img src="view/common/image/manual.png"><span>매뉴얼</span></button>
+        </div>
+    </div>
+</div>
+<style>
+    div#preloaded-images
+    {
+        position: absolute;
+        overflow: hidden;
+        left: -9999px;
+        top: -9999px;
+        height: 1px;
+        width: 1px;
+    }
+</style>
+<div id="preloaded-images">
+    <img src="view/common/image/app_windows.png" width="1" height="1" />
+    <img src="view/common/image/app_web.png" width="1" height="1" />
+    <img src="view/common/image/alert-small.gif" width="1" height="1" />
+</div>

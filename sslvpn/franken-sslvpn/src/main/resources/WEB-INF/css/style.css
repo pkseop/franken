@@ -1,0 +1,141 @@
+
+html {
+	height: 100%
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: "Malgun Gothic";
+	font-size: 0.9em;
+	
+	background-image: linear-gradient(top, #d1d3d4 0%, #ffffff 100%);
+	background-image: -webkit-linear-gradient(top, #d1d3d4 0%, #ffffff 100%);
+	/* For Internet Explorer 5.5 - 7 */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFd1d3d4, endColorstr=#FFFFFFFF);
+	/* For Internet Explorer 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFd1d3d4, endColorstr=#FFFFFFFF)";
+}
+
+h3 {
+	position: relative;
+	color: #ffffff;
+	margin: 0;
+	padding: 0.5em 0.5em 0.5em 1.2em;
+	
+	background: #4d83ab;
+	background-image: linear-gradient(top, #4d83ab 0%, #195a90 100%);
+	background-image: -webkit-linear-gradient(top, #4d83ab 0%, #195a90 100%);
+	
+	background-image: url("ie.svg");
+	
+	-moz-border-radius: 10px 10px 0px 0px;
+	-webkit-border-radius: 10px 10px 0px 0px;
+	border-radius: 10px 10px 0px 0px;
+	
+}
+
+form {
+	padding: 1.2em;
+	padding-top: 0.6em;
+	font-size: 1.2em;
+}
+
+form div {
+	line-height: 2.2em
+}
+
+form span {
+	position: absolute;
+}
+
+form input[type=text], textarea {
+	margin-left: 120px;
+	width: 68%;
+	font-size: 1em;
+}
+
+textarea {
+	margin-top: 0.5em;
+	height: 5.7em;
+	font-size: 0.9em;
+}
+
+input[type=button] {
+	color: white;
+	padding: 0.3em 1em 0.5em 1em;
+	border: 0px;
+	font-size: 1em;
+	margin-top: 0.5em;
+	font-family: "Malgun Gothic";
+	
+	border-radius: 0.3em;
+	
+	
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff4d83ab, endColorstr=#ff195a90);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff4d83ab, endColorstr=#ff195a90)";
+	background-image: linear-gradient(top, #4d83ab 0%, #195a90 100%);
+	background-image: -webkit-linear-gradient(top, #4d83ab 0%, #195a90 100%);
+	background-image: -moz-linear-gradient(top, #4d83ab 0%, #195a90 100%);
+}
+
+input[type=button]:hover {
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff8aadc8, endColorstr=#ff004884);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff8aadc8, endColorstr=#ff004884)";
+	background-image: linear-gradient(top, #8aadc8 0%, #004884 100%);
+	background-image: -webkit-linear-gradient(top, #8aadc8 0%, #004884 100%);
+	background-image: -moz-linear-gradient(top, #8aadc8 0%, #004884 100%);
+}
+
+input[type=button]:active {
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff004884, endColorstr=#ff8aadc8);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#ff004884, endColorstr=#ff8aadc8)";
+	background-image: linear-gradient(top, #004884 0%, #8aadc8 100%);
+	background-image: -webkit-linear-gradient(top, #004884 0%, #8aadc8 100%);
+	background-image: -moz-linear-gradient(top, #004884 0%, #8aadc8 100%);
+}
+
+.gotError {
+	border: 2px #be1e3d solid;
+}
+
+#submit {
+	float: right;
+}
+
+#message {
+	float: left;
+	width: 20em;
+	display: none;
+	margin-top: 1.3em;
+	line-height: 1.3em;
+	font-size: 0.8em;
+	color: #be1e2d
+}
+
+#message img {
+	margin: 0.5em;
+	margin-top: -0.25em;
+}
+
+#container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 30em;
+	height: 18em;
+	margin-top: -9em;
+	margin-left: -15em;
+	border: 1px solid #d3d3d3;
+	
+	
+	background-image: linear-gradient(top, #ffffff 0%, #f1f2f2 100%);
+	background-image: -webkit-linear-gradient(top, #ffffff 0%, #f1f2f2 100%);
+	background-image: -ms-linear-gradient(top, #ffffff 0%, #f1f2f2 100%);
+	background-color: #ffffff;
+	
+	border-radius: 10px;
+	box-shadow: 10px 10px 20px #ccc; 
+}

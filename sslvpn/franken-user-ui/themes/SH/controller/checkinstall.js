@@ -1,0 +1,1 @@
+define([],function(){var e=function(){$.get("/external/notice_image").error(function(){$g.noNoticeImage=!0,$(".s_notice_image").addClass("notice_fallback")}),$.get("/external/top_image").error(function(){$g.noTopImage=!0,$(".s_top_image").addClass("top_fallback")})};return{init:e}})

@@ -1,0 +1,30 @@
+
+.ie6 .s_left {
+	float: left;
+	padding-right: 0px;
+}
+.ie6 .s_area_cldn.type1 {
+	padding-left: 20px;
+	height: 130px;
+}
+.ie6 .s_area_cldn .span1 {
+	float: left;
+	padding-left: 30px;
+}
+.ie6 .s_area_cldn.type1 .span1 {
+	float: left;
+	padding-left: 10px;
+}
+.ie6 .s_right {
+	margin-left: 20px;
+}
+.ie6 .nav li {
+	float: left;
+	margin-right: 10px;
+	padding-right: 10px;
+	border-right: 1px solid #ccc;
+}
+.ie6 #applist img {
+	width: 48px;
+	height: 48px;
+}

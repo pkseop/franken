@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<parent>
+		<groupId>kr.co.future</groupId>
+		<artifactId>franken-infra-pom</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>franken-api</artifactId>
+	<name>Franken API</name>
+	<version>2.1.3</version>
+	<url>http://maven.apache.org</url>
+</project>

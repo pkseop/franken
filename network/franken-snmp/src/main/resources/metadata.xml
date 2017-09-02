@@ -1,0 +1,4 @@
+<ipojo>
+	<instance component="snmp-trap-service" />
+	<instance component="snmp-script-factory" />
+</ipojo>

@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>kr.co.future</groupId>
+		<artifactId>franken-network-pom</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<artifactId>franken-servlet-api</artifactId>
+	<version>3.0.0</version>
+	<packaging>bundle</packaging>
+	<name>Franken Servlet API</name>
+	<dependencies>
+		<dependency>
+			<groupId>kr.co.future</groupId>
+			<artifactId>franken-api</artifactId>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Bundle-SymbolicName>kr.co.future.servlet.api</Bundle-SymbolicName>
+						<Export-Package>
+							kr.co.future.servlet.api;version=${project.version},
+							javax.servlet;version="3.0.0",
+							javax.servlet.annotation;version="3.0.0",
+							javax.servlet.descriptor;version="3.0.0",
+							javax.servlet.http;version="3.0.0"
+						</Export-Package>
+						<Import-Package>*</Import-Package>
+					</instructions>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-ipojo-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>ipojo-bundle</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

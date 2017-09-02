@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Export-Package: kr.co.future.cron;version="1.6.1",kr.co.future.cron.ms
+ gbus;version="1.6.1"
+Built-By: patchboys
+Tool: Bnd-0.0.357
+Bundle-Name: Franken Cron
+Created-By: Apache Maven Bundle Plugin
+Bundle-Vendor: Franken Project
+Build-Jdk: 1.7.0_25
+Bundle-Version: 1.6.1
+Bnd-LastModified: 1445225546769
+Bundle-ManifestVersion: 2
+Bundle-Description: Franken is stems from franken project and use for 
+ sslplus.
+Import-Package: kr.co.future.api,kr.co.future.confdb;version="0.11",kr
+ .co.future.cron;version="1.6",kr.co.future.cron.msgbus;version="1.6",
+ kr.co.future.msgbus;resolution:=optional,kr.co.future.msgbus.handler;
+ resolution:=optional,org.osgi.framework;version="1.6",org.osgi.util.t
+ racker;version="1.4",org.slf4j;version="1.7"
+Bundle-SymbolicName: kr.co.future.cron
+Bundle-DocURL: http://future.co.kr/
+

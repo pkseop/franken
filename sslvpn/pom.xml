@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>kr.co.future</groupId>
+		<artifactId>franken</artifactId>
+		<version>1.0.0</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+	<groupId>kr.co.future</groupId>
+	<version>1.0.0</version>
+	<artifactId>franken-sslvpn-pom</artifactId>
+	<name>Franken SSLVPN POM</name>
+	<packaging>pom</packaging>
+	<modules>
+		<module>franken-xtmconf</module>
+		<module>franken-external-auth</module>
+		<module>franken-sslvpn</module>
+		<module>franken-syslog-relay</module>
+		<module>franken-nac-dummy</module>
+		<module>sites</module>
+	</modules>
+	<profiles>
+		<!-- to include (expensive) ui bundles in build, activate profile like 
+			following. $ mvn package -P include-ui-bundle -->
+		<profile>
+			<id>include-ui-bundle</id>
+			<modules>
+				<module>franken-user-ui</module>
+				<module>franken-user-ui-kps</module>
+				<module>franken-user-ui-nh</module>
+				<module>watchcat-ui</module>
+				<module>franken-ui</module>
+				<module>franken-user-ui-theme</module>
+			</modules>
+		</profile>
+	</profiles>	
+		
+</project>

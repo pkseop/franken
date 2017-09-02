@@ -1,0 +1,82 @@
+<div class="top_notice alert">
+	<i class="icon"></i>
+	<span class="msg"></span>
+</div>
+<div class="container">
+	<div class="titlebanner">
+	</div>
+
+	<div class="maincont">
+		
+		<div class="top_right">			
+			<a href="#" id="btn_logout"><img src="view/ice/images/logout.png"/></a>
+			<a href="view/ice/page/vpn_service.html" target="_blank"><img src="view/ice/images/service.png"/></a>
+			<a href="view/ice/page/vpn_guide.html" target="_blank"><img src="view/ice/images/information.png"/></a>
+		</div>
+		<ul class="info">
+			<li>
+				<span id="lbl_name"></span> (<span class="s_id"></span>)
+			</li>
+			<li>
+				<div id="lbl_ip"></div>
+			</li>
+			<li>
+				<div>접속시간 <span id="lbl_timer">00:00:00</span></div>
+			</li>
+		</ul>
+
+		<div class="bigtab">
+			<a href="#" id="btn_change_password"><img src="view/ice/images/icon_user_control.png"/></a>
+			<a href="#" id="btn_bookmark"><img src="view/ice/images/icon_bookmark.png"/></a>
+		</div>
+		<div id="cont_applist" class="contents">
+			<img src="view/ice/images/bookmark.png" />
+			<table>
+				<tr>
+					<td>Name</td>
+					<td style="text-align: right">URL</td>
+				</tr>
+			</table>
+			<ul id="applist">
+			</ul>
+		</div>
+		<div id="cont_change" class="contents" style="display:none">
+			<img src="view/ice/images/user_control.png" />
+			<div id="div_change">
+				<form id="change" class="form-horizontal box-vis">
+					<div class="well" id="change_msg"><span class="s_id"></span>님의 암호를 변경합니다. 새 암호를 입력하세요.<br/>암호는 9자 이상의 영문, 숫자, 특수문자 조합으로 만들어야 합니다.</div>
+					<div id="area_old" class="control-group">
+						<label class="control-label" for="password_old">기존 암호</label>
+						<div class="controls">
+							<input type="password" class="input-xlarge" name="old_password" id="password_old" />
+							<p class="help-block" style="display:none">유효하지 않은 암호</p>
+						</div>
+					</div>
+					<div id="area_new" class="control-group">
+						<label class="control-label" for="password_new">새 암호</label>
+						<div class="controls">
+							<input type="password" class="input-xlarge" name="password" id="password_new" />
+							<p class="help-block" style="display:none">유효하지 않은 암호</p>
+						</div>
+					</div>
+					<div id="area_re" class="control-group">
+						<label class="control-label" for="password_re">새 암호 확인</label>
+						<div class="controls">
+							<input type="password" class="input-xlarge" name="repassword" id="password_re" />
+							<p class="help-block" style="display:none">유효하지 않은 암호</p>
+						</div>
+					</div>
+					<div class="form-actions">
+						<button id="do_change" class="btn btn-primary" style="width: 90px">암호 변경</button>
+					</div>
+					<input type="hidden" name="type" value="json" />
+					<input type="hidden" name="login_name" id="login_name" />
+				</form>
+			</div>
+		</div>
+	</div>
+
+    <div id="footer_area">
+    	<p><img src="view/ice/images/bn_inchon.gif" class="logo"/>Copyright@2012 Future Systems,Inc. All Rights Reserved.</p>
+    </div>
+</div>

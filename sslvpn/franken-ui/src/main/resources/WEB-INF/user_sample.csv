@@ -1,0 +1,3 @@
+login_name,password,name,email,description,title,phone,dept,static_ip,allow_ip_from,allow_ip_to,is_locked,expire,idn
+sample1,1a2s3d,sample1,sample1@sslplus.com,this is sample,title,010-123-4567,department,1.2.3.4,1.2.3.4,1.2.3.6,false,2012-04-26 09:49:36,123456-1234567
+sample2,5h6e7s8d9,sample2,sample1@sslplus.com,this is sample,title,011-9877-4321,department,1.2.3.7,1.2.3.7,1.2.3.9,true,2012-04-26 09:49:36,1234567891011
